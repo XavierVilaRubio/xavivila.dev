@@ -9,13 +9,14 @@ function Header({}: Props) {
 
   return (
     <>
-      <header className="flex flex-col items-center justify-between px-4 sm:flex-row">
+      <header className="sticky top-0 flex flex-col items-center justify-between px-4 bg-white sm:flex-row">
         <div className="flex items-center justify-between w-full py-8 sm:w-fit">
           <Image src={logo} alt="Xavier Vila logo" height={26} width={50} />
           <button
             className="align-middle sm:hidden h-fit"
             onClick={() => {
               navRef.current?.classList.toggle("max-h-44");
+              navRef.current?.classList.toggle("max-h-0");
             }}
           >
             <svg

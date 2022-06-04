@@ -1,4 +1,6 @@
+import Image from "next/image";
 import React from "react";
+import logo from "public/logo.svg";
 
 type Props = {};
 
@@ -7,9 +9,9 @@ function Header({}: Props) {
 
   return (
     <>
-      <header className="flex flex-col items-center justify-between px-4 py-2 sm:flex-row">
-        <div className="flex items-center justify-between w-full sm:w-fit">
-          <p className="py-2 text-4xl font-extrabold">XV</p>
+      <header className="flex flex-col items-center justify-between px-4 sm:flex-row">
+        <div className="flex items-center justify-between w-full py-8 sm:w-fit">
+          <Image src={logo} alt="Xavier Vila logo" height={26} width={50} />
           <button
             className="align-middle sm:hidden h-fit"
             onClick={() => {
@@ -19,13 +21,15 @@ function Header({}: Props) {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-6 h-6"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
             >
               <path
-                fillRule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clipRule="evenodd"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
               />
             </svg>
           </button>
@@ -34,7 +38,7 @@ function Header({}: Props) {
           ref={navRef}
           className="flex flex-col gap-4 overflow-hidden text-center transition-[max-height] ease-out duration-500 max-h-0 sm:flex-row sm:contents"
         >
-          <ul className="flex flex-col gap-4 transition sm:flex-row sm:gap-8">
+          <ul className="flex flex-col gap-4 pt-4 transition sm:pt-0 sm:flex-row sm:gap-8">
             <li>
               <a href="#">Work</a>
             </li>
@@ -45,7 +49,7 @@ function Header({}: Props) {
               <a href="#">Contact</a>
             </li>
           </ul>
-          <div className="">
+          <div className="pb-4 sm:pb-0">
             <p className="text-sm">ENG</p>
           </div>
         </nav>

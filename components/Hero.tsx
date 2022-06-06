@@ -13,7 +13,12 @@ export default function Hero({}: Props) {
         id="hero"
       >
         <div className="w-2/5 imageContainer">
-          <Image src={xavi} alt="Xavier Vila photo" layout="raw" />
+          <Image
+            src={xavi}
+            alt="Xavier Vila photo"
+            layout="raw"
+            priority={true}
+          />
         </div>
         <div className="px-4 mt-6 text-center sm:text-left sm:my-0 sm:w-3/5 sm:px-0">
           <h1 className="px-4 text-3xl font-semibold sm:font-extrabold sm:px-0 sm:text-5xl title">

@@ -3,8 +3,13 @@ import Head from "next/head";
 import Header from "components/Header";
 import Hero from "components/Hero";
 import Work from "components/Section/Work";
+import { useTranslation, useLanguageQuery } from "next-export-i18n";
+import Resume from "components/Section/Resume";
+import Contact from "components/Section/Contact";
 
 const Home: NextPage = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Head>
@@ -13,9 +18,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="container">
-        <Header />
-        <Hero />
-        <Work />
+        <Header t={t} />
+        <Hero t={t} />
+        <Work t={t} />
+        <Resume t={t} />
+        <Contact t={t} />
       </div>
     </>
   );

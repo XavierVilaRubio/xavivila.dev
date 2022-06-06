@@ -9,7 +9,10 @@ type SectionProps = {
 
 function Section({ title, children, className, id }: SectionProps) {
   return (
-    <section className={`text-center px-4 ${className} section`} id={id}>
+    <section
+      className={`text-center px-4 ${className} section min-h-screen`}
+      id={id}
+    >
       <h3 className="text-4xl font-extrabold">{title}</h3>
       {children}
     </section>

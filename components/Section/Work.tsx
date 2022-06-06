@@ -1,14 +1,17 @@
 import Section from "components/Templates/Section";
 import React from "react";
 
-type WorkSectionProps = {};
+type WorkSectionProps = {
+  t: any;
+};
 
-export default function Work({}: WorkSectionProps) {
+export default function Work({ t }: WorkSectionProps) {
   return (
-    <Section title="Work" className="mt-16" id="work">
-      <p>
-        Check my commercial and non commercial projects. If you have any
-        questions feel free to ask me for more information.
+    <Section title={t("work.title")} className="mt-16" id="work">
+      <p className="mt-4">
+        {t("work.subtitle1")}
+        <br />
+        {t("work.subtitle2")}
       </p>
     </Section>
   );

@@ -1,10 +1,15 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
 import logo from "public/logo.svg";
+import { LanguageSwitcher, useLanguageQuery } from "next-export-i18n";
 
-type Props = {};
+type Props = {
+  t: any;
+};
 
-function Header({}: Props) {
+function Header({ t }: Props) {
+  const [query] = useLanguageQuery();
+
   const navRef: React.RefObject<HTMLInputElement> = React.createRef();
 
   useEffect(() => {
@@ -84,17 +89,23 @@ function Header({}: Props) {
           id="navLinks"
         >
           <li>
-            <a href="#work">Work</a>
+            <a href="#work">{t("work.title")}</a>
           </li>
           <li>
-            <a href="#resume">Resume</a>
+            <a href="#resume">{t("resume.title")}</a>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <a href="#contact">{t("contact.title")}</a>
           </li>
         </ul>
         <div className="pb-4 sm:pb-0">
-          <p className="text-sm ">ENG</p>
+          <p className="text-sm ">
+            {query?.lang === "en" ? (
+              <LanguageSwitcher lang="es">🇪🇸</LanguageSwitcher>
+            ) : (
+              <LanguageSwitcher lang="en">🇺🇸</LanguageSwitcher>
+            )}
+          </p>
         </div>
       </nav>
     </header>

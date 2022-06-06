@@ -3,9 +3,11 @@ import Image from "next/image";
 import xavi from "public/xavi.png";
 import CustomButton from "./CustomButton";
 
-type Props = {};
+type Props = {
+  t: any;
+};
 
-export default function Hero({}: Props) {
+export default function Hero({ t }: Props) {
   return (
     <>
       <div
@@ -22,18 +24,20 @@ export default function Hero({}: Props) {
         </div>
         <div className="px-4 mt-6 text-center sm:text-left sm:my-0 sm:w-3/5 sm:px-0">
           <h1 className="px-4 text-3xl font-semibold sm:font-extrabold sm:px-0 sm:text-5xl title">
-            Hi, I&rsquo;m Xavi and I&rsquo;m a <span>Junior Web Developer</span>
-            .
+            {t("hero.headline.main")} <span>{t("hero.headline.span")}</span>.
           </h1>
-          <p className="mt-4 ">
-            I&rsquo;m a Junior Web Developer based in Igualada, Barcelona. I
-            have 1 year of commercial experience and I specialize in frontend
-            development. I am open for new opportunities and interesting
-            projects.
-          </p>
+          <p className="mt-4 ">{t("hero.subtext")}</p>
           <div className="flex flex-row gap-4 mt-6">
-            <CustomButton label="Contact me" fill={true} href="#contact" />
-            <CustomButton label="Check my work" fill={false} href="#work" />
+            <CustomButton
+              label={t("hero.contact_button")}
+              fill={true}
+              href="#contact"
+            />
+            <CustomButton
+              label={t("hero.work_button")}
+              fill={false}
+              href="#work"
+            />
           </div>
         </div>
       </div>

@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 html {
+	scroll-behavior: smooth;
+}
+
+div.container {
 	height: 250vh;
 }

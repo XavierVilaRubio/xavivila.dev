@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "headline": {
+      "main": "Hi, I'm Xavi and I'm a ",
+      "span": "Junior Web Developer"
+    },
+    "subtext": "I'm a Junior Web Developer based in Igualada, Barcelona. I have 1 year of commercial experience and I specialize in frontend development. I am open for new opportunities and interesting projects.",
+    "contact_button": "Contact me",
+    "work_button": "Check my work"
+  },
+  "work": {
+    "title": "Work",
+    "subtitle1": "Check my commercial and non commercial projects.",
+    "subtitle2": "If you have any questions feel free to ask me for more information."
+  },
+  "resume": {
+    "title": "Resume",
+    "subtitle": "I started my journey as a programmer 4 years ago when I discovered JavaScript and the Web."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle1": "Let me know if you are interested in my services or collaboration.",
+    "subtitle2": "I will reply as soon as possible."
+  }
+}

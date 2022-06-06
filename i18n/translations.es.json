@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "headline": {
+      "main": "Hola, soy Xavi y soy ",
+      "span": "Desarrollador Web Junior"
+    },
+    "subtext": "Soy un Desarrollador Web Junior de Igualada, Barcelona. Llevo 1 año trabajando y estoy especializado en desarrollo frontend. Estoy abierto a nuevas oportunidades y proyectos interesantes.",
+    "contact_button": "Contactame",
+    "work_button": "Mira mi trabajo"
+  },
+  "work": {
+    "title": "Trabajo",
+    "subtitle1": "Mira mis proyectos comerciales y no comerciales.",
+    "subtitle2": "Si tienes cualquier pregunta no dudes en pedirme más información."
+  },
+  "resume": {
+    "title": "Curriculum",
+    "subtitle": "Empecé mi camino como programador hace 4 años cuando descubrí JavaScript y la Web."
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle1": "Hazme saber si estás interesado en mis servicios o en mi colaboración.",
+    "subtitle2": "Te responderé lo antes posible."
+  }
+}

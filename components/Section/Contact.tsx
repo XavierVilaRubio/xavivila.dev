@@ -5,7 +5,7 @@ type ContactSectionProps = {
   t: any;
 };
 
-export default function Contact({ t }: ContactSectionProps) {
+const Contact = ({ t }: ContactSectionProps) => {
   return (
     <Section title={t("contact.title")} className="mt-16" id="contact">
       <p className="mt-4">
@@ -15,4 +15,6 @@ export default function Contact({ t }: ContactSectionProps) {
       </p>
     </Section>
   );
-}
+};
+
+export default Contact;

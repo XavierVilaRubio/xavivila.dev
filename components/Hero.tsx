@@ -7,27 +7,28 @@ type Props = {
   t: any;
 };
 
-export default function Hero({ t }: Props) {
+const Hero = ({ t }: Props) => {
   return (
     <>
       <div
-        className="flex flex-col items-center max-w-4xl mx-auto mt-8 sm:flex-row sm:gap-4"
+        className="flex flex-col items-center flex-grow max-w-4xl mx-auto sm:mt-8 max-h-max sm:flex-row sm:gap-4"
         id="hero"
       >
-        <div className="w-2/5 imageContainer">
+        <div className="relative w-screen h-full imageContainer">
           <Image
             src={xavi}
             alt="Xavier Vila photo"
             layout="raw"
             priority={true}
+            className="absolute left-0 right-0 w-auto max-h-full mx-auto"
           />
         </div>
         <div className="px-4 mt-6 text-center sm:text-left sm:my-0 sm:w-3/5 sm:px-0">
-          <h1 className="px-4 text-3xl font-semibold sm:font-extrabold sm:px-0 sm:text-5xl title">
+          <h1 className="px-4 text-3xl font-semibold sm:font-extrabold sm:px-0 sm:text-4xl md:text-5xl title">
             {t("hero.headline.main")} <span>{t("hero.headline.span")}</span>.
           </h1>
           <p className="mt-4 ">{t("hero.subtext")}</p>
-          <div className="flex flex-row gap-4 mt-6">
+          <div className="flex flex-row gap-4 mt-6 sm:w-4/5">
             <CustomButton
               label={t("hero.contact_button")}
               fill={true}
@@ -37,6 +38,7 @@ export default function Hero({ t }: Props) {
               label={t("hero.work_button")}
               fill={false}
               href="#work"
+              className="font-normal"
             />
           </div>
         </div>
@@ -49,8 +51,12 @@ export default function Hero({ t }: Props) {
           background-color: black;
           white-space: nowrap;
 
-          -webkit-clip-path: inset(21% -1% -1% -1%);
-          clip-path: inset(21% 0% 0% 0%);
+          // -webkit-clip-path: inset(21% -1% -1% -1%);
+          // clip-path: inset(21% 0% 0% 0%);
+        }
+
+        .imageContainer {
+          // max-width: 30vh;
         }
 
         // .imageContainer::before {
@@ -67,13 +73,8 @@ export default function Hero({ t }: Props) {
         //   background-position: 0 0, 20px 20px;
         // }
       `}</style>
-      {/* background-color: #fbfbfb; opacity: 1; background-image:
-      radial-gradient(#444cf7 1.3px, transparent 1.3px), radial-gradient(#444cf7
-      1.3px, #fbfbfb 1.3px); background-size: 52px 52px; background-position: 0
-      0, 26px 26px; */}
-      {/* background-image: radial-gradient(#212121 2px, transparent 2px),
-      radial-gradient(#212121 3px, transparent 3px); background-position: 0 0,
-      10px, 10px; background-size: 21px 21px; */}
     </>
   );
-}
+};
+
+export default Hero;

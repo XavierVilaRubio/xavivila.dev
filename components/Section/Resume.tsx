@@ -5,10 +5,12 @@ type ResumeSectionProps = {
   t: any;
 };
 
-export default function Resume({ t }: ResumeSectionProps) {
+const Resume = ({ t }: ResumeSectionProps) => {
   return (
     <Section title={t("resume.title")} className="mt-16" id="resume">
       <p className="mt-4">{t("resume.subtitle")}</p>
     </Section>
   );
-}
+};
+
+export default Resume;

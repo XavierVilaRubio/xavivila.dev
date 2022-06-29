@@ -7,7 +7,7 @@ type SectionProps = {
   id: string;
 };
 
-function Section({ title, children, className, id }: SectionProps) {
+const Section = ({ title, children, className, id }: SectionProps) => {
   return (
     <section
       className={`text-center px-4 ${className} section min-h-screen`}
@@ -17,6 +17,6 @@ function Section({ title, children, className, id }: SectionProps) {
       {children}
     </section>
   );
-}
+};
 
 export default Section;

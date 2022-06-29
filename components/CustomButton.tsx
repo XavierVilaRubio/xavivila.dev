@@ -4,9 +4,10 @@ type CustomButtonProps = {
   label: string;
   fill: boolean;
   href: string;
+  className?: string;
 };
 
-function CustomButton({ label, fill, href }: CustomButtonProps) {
+const CustomButton = ({ label, fill, href, className }: CustomButtonProps) => {
   return (
     <a
       href={href}
@@ -14,11 +15,11 @@ function CustomButton({ label, fill, href }: CustomButtonProps) {
         fill
           ? "bg-black hover:bg-transparent text-white hover:text-black"
           : "bg-transparent hover:bg-black text-black hover:text-white"
-      } rounded-md font-semibold border border-black transition-colors text-center`}
+      } ${className} rounded-md font-semibold border border-black transition-colors text-center`}
     >
       {label}
     </a>
   );
-}
+};
 
 export default CustomButton;

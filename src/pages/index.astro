@@ -1,14 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Card from '../components/Card.astro'
 ---
 
 <Layout title="Welcome to Astro.">
-  <main></main>
+  <section class="section" id="section1">
+    <h1>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, minus?
+    </h1>
+  </section>
+  <section class="section" id="section2">
+    <h1>
+      Voluptatibus doloribus mollitia temporibus. Enim quos culpa sint quibusdam
+      nulla!
+    </h1>
+  </section>
+  <section class="section" id="section3">
+    <h1>Excepturi amet velit, ad iste tempore molestiae omnis earum sed!</h1>
+  </section>
 </Layout>
 
 <style>
-  main {
+  section {
     min-height: 100vh;
+    display: grid;
+    place-content: center;
   }
 </style>

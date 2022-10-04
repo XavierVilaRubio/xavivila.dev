@@ -2,35 +2,60 @@
 import './Header.css'
 ---
 
+<script is:inline>
+  const intersectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(({ target, isIntersecting }) => {
+        const navLink = document.querySelector(`a[href='#${target.id}']`)
+        navLink?.classList.toggle('active', isIntersecting)
+      })
+    },
+    {
+      threshold: 0.5,
+    }
+  )
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.section')
+    sections.forEach((section) => {
+      intersectionObserver.observe(section)
+    })
+  })
+</script>
+
 <header>
-  <div class="logo">
-    <h1 class="brand">XV</h1>
-  </div>
-  <div class="links">
-    <nav class="menu">
-      <input type="checkbox" id="menuToggle" />
-      <label for="menuToggle" class="menu-icon"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="burger-toggle"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h8m-8 6h16"></path>
-        </svg>
-      </label>
+  <nav class="menu">
+    <img class="logo" src="XV.svg" alt="Xavi Vila logo" />
+    <input type="checkbox" id="menuToggle" />
+    <label for="menuToggle" class="menu-icon">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="burger-toggle"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        ><path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h8m-8 6h16"></path>
+      </svg>
+    </label>
+    <nav class="lists">
       <ul>
-        <a href="#"><li>Work</li></a>
-        <a href="#"><li>Resume</li></a>
-        <a href="#"><li>Contact</li></a>
+        <li><a href="#section1">Work</a></li>
+        <li><a href="#section2">Resume</a></li>
+        <li><a href="#section3">Contact</a></li>
       </ul>
-      <ul>
-        <li>patata</li>
-      </ul>
+      <div class="language-and-social">
+        <ul class="language">
+          <li>EN</li>
+          <li>ES</li>
+        </ul>
+        <ul class="social">
+          <li>A</li>
+          <li>B</li>
+        </ul>
+      </div>
     </nav>
-  </div>
+  </nav>
 </header>

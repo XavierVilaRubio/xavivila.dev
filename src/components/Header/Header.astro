@@ -23,13 +23,13 @@ import './Header.css'
 </script>
 
 <header>
-  <nav class="menu">
+  <div class="wrapper">
     <img class="logo" src="XV.svg" alt="Xavi Vila logo" />
     <input type="checkbox" id="menuToggle" />
-    <label for="menuToggle" class="menu-icon">
+    <label for="menuToggle" class="menu-label">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="burger-toggle"
+        class="menu-icon"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -40,22 +40,22 @@ import './Header.css'
           d="M4 6h16M4 12h8m-8 6h16"></path>
       </svg>
     </label>
-    <nav class="lists">
+    <nav class="nav-links">
       <ul>
         <li><a href="#section1">Work</a></li>
         <li><a href="#section2">Resume</a></li>
         <li><a href="#section3">Contact</a></li>
       </ul>
-      <div class="language-and-social">
-        <ul class="language">
+      <div class="language-and-social-lists">
+        <ul class="language-list">
           <li>EN</li>
           <li>ES</li>
         </ul>
-        <ul class="social">
+        <ul class="social-list">
           <li>A</li>
           <li>B</li>
         </ul>
       </div>
     </nav>
-  </nav>
+  </div>
 </header>

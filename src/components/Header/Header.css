@@ -10,7 +10,7 @@ header {
   height: 24px;
 }
 
-.menu {
+.wrapper {
   display: flex;
   position: relative;
   align-items: center;
@@ -23,11 +23,11 @@ header {
   display: none;
 }
 
-.menu-icon {
+.menu-label {
   display: none;
 }
 
-.burger-toggle {
+.menu-icon {
   width: 24px;
   height: 24px;
 }
@@ -36,17 +36,17 @@ header {
   font-weight: bold;
 }
 
-.lists {
+.nav-links {
   display: contents;
   gap: 4rem;
 }
 
-.language-and-social {
+.language-and-social-lists {
   display: flex;
   gap: 1rem;
 }
 
-.lists ul {
+.nav-links ul {
   display: flex;
   margin: 0;
   padding: 0;
@@ -55,7 +55,7 @@ header {
 }
 
 @media (max-width: 768px) {
-  .menu {
+  .wrapper {
     justify-content: center;
   }
 
@@ -64,7 +64,7 @@ header {
     left: 0;
   }
 
-  .lists {
+  .nav-links {
     display: flex;
     position: absolute;
     top: 0;
@@ -76,19 +76,19 @@ header {
     gap: 1.5rem;
   }
 
-  .lists > ul,
-  .language-and-social {
+  .nav-links > ul,
+  .language-and-social-lists {
     flex-direction: column;
     align-items: center;
   }
 
-  .menu-icon {
+  .menu-label {
     display: flex;
     position: absolute;
     right: 0;
   }
 
-  #menuToggle:checked ~ .lists {
+  #menuToggle:checked ~ .nav-links {
     max-height: 350px;
     padding-block: 1rem;
   }

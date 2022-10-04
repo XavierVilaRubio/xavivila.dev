@@ -1,5 +1,7 @@
 ---
 import './Header.css'
+import { t } from 'i18next'
+import { LanguageSelector } from 'astro-i18next/components'
 ---
 
 <script is:inline>
@@ -24,7 +26,7 @@ import './Header.css'
 
 <header>
   <div class="wrapper">
-    <img class="logo" src="XV.svg" alt="Xavi Vila logo" />
+    <img class="logo" src="/public/XV.svg" alt="Xavi Vila logo" />
     <input type="checkbox" id="menuToggle" />
     <label for="menuToggle" class="menu-label">
       <svg
@@ -42,18 +44,35 @@ import './Header.css'
     </label>
     <nav class="nav-links">
       <ul>
-        <li><a href="#section1">Work</a></li>
-        <li><a href="#section2">Resume</a></li>
-        <li><a href="#section3">Contact</a></li>
+        <li><a href="#section1">{t('navbar.work')}</a></li>
+        <li><a href="#section2">{t('navbar.resume')}</a></li>
+        <li><a href="#section3">{t('navbar.contact')}</a></li>
       </ul>
       <div class="language-and-social-lists">
         <ul class="language-list">
-          <li>EN</li>
-          <li>ES</li>
+          <li><button onclick="location = '/' ">EN</button></li>
+          <li><button onclick="location = '/es/' ">ES</button></li>
+          <LanguageSelector showFlag={true} class="my-select-class" />
         </ul>
         <ul class="social-list">
-          <li>A</li>
-          <li>B</li>
+          <li>
+            <a href="https://github.com/XavierVilaRubio" target="_blank">
+              <img
+                class="icon"
+                src="/public/icons/github.svg"
+                alt="GitHub logo"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/XavierVilaRubio" target="_blank">
+              <img
+                class="icon"
+                src="/public/icons/linkedin.svg"
+                alt="Linkedin logo"
+              />
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

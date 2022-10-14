@@ -1,0 +1,94 @@
+---
+import './JsHeader.css'
+import i18next from 'i18next'
+
+import { t } from 'i18next'
+---
+
+<script is:inline>
+  const intersectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(({ target, isIntersecting }) => {
+        const navLink = document.querySelector(`a[href='/#${target.id}']`)
+        navLink?.classList.toggle('active', isIntersecting)
+      })
+    },
+    {
+      threshold: 0.5,
+    }
+  )
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.section')
+    sections.forEach((section) => {
+      intersectionObserver.observe(section)
+    })
+
+    document
+      .getElementById('menu-button')
+      .addEventListener('click', function () {
+        document.getElementById('nav-links').classList.toggle('show')
+      })
+  })
+</script>
+
+<header>
+  <div class="wrapper">
+    <div class="logo-and-menu">
+      <img class="logo" src="/XV.svg" alt="Xavi Vila logo" />
+      <button class="menu-button" id="menu-button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="menu-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h8m-8 6h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav class="nav-links show" id="nav-links">
+      <ul class="links-list">
+        <li><a href="/#work">{t('navbar.work')}</a></li>
+        <li><a href="/#resume">{t('navbar.resume')}</a></li>
+        <li><a href="/#contact">{t('navbar.contact')}</a></li>
+      </ul>
+      <div class="language-and-social-lists">
+        <ul class="language-list">
+          <li>
+            <button
+              onclick="location = '/' "
+              class={`language-button ${
+                i18next.resolvedLanguage === 'en' && 'active'
+              }`}>EN</button
+            >
+          </li>
+          <p>|</p>
+          <li>
+            <button
+              onclick="location = '/es/' "
+              class={`language-button ${
+                i18next.resolvedLanguage === 'es' && 'active'
+              }`}>ES</button
+            >
+          </li>
+        </ul>
+        <ul class="social-list">
+          <li>
+            <a href="https://github.com/XavierVilaRubio" target="_blank">
+              <img class="icon" src="/icons/github.svg" alt="GitHub logo" />
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/XavierVilaRubio" target="_blank">
+              <img class="icon" src="/icons/linkedin.svg" alt="Linkedin logo" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>

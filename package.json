@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "private": true,
+  "browsersList": "last 2 versions",
   "scripts": {
     "local": "astro dev",
     "start": "astro dev",

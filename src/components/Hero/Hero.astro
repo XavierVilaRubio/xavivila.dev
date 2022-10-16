@@ -18,8 +18,12 @@ setDefaultNamespace('hero')
       {t('subHeadline')}
     </p>
     <div class="links">
-      <LinkButton href="#contact" label="Contact me" />
-      <LinkButton href="#work" label="Check my work" theme="secondary" />
+      <LinkButton href="#contact" label={t('contactMeButton')} />
+      <LinkButton
+        href="#work"
+        label={t('checkMyWorkButton')}
+        theme="secondary"
+      />
     </div>
   </div>
 </section>

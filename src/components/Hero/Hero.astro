@@ -1,0 +1,115 @@
+---
+import LinkButton from '../Common/LinkButton/LinkButton.astro'
+import { Trans } from 'astro-i18next/components'
+import { t, setDefaultNamespace } from 'i18next'
+
+setDefaultNamespace('hero')
+---
+
+<section>
+  <img src="/xavi_compressed.webp" alt="" />
+  <div class="text">
+    <h1>
+      <Trans i18nKey="headline">
+        Hi, I'm Xavi and I'm <br /> a <span>Junior Frontend Developer</span>.
+      </Trans>
+    </h1>
+    <p>
+      {t('subHeadline')}
+    </p>
+    <div class="links">
+      <LinkButton href="#contact" label="Contact me" />
+      <LinkButton href="#work" label="Check my work" theme="secondary" />
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    /* width: max(65rem, 75%); */
+    max-width: 70rem;
+    margin-inline: auto;
+  }
+
+  img {
+    max-width: 23rem;
+    width: 60%;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 40rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    font-size: clamp(
+      1.6rem,
+      1.1699346405228759rem + 1.8300653594771243vw,
+      3rem
+    );
+    font-weight: 800;
+  }
+
+  p {
+    font-size: 0.875rem;
+    font-size: clamp(
+      0.875rem,
+      0.8366013071895425rem + 0.16339869281045752vw,
+      1rem
+    );
+    line-height: 1.15rem;
+  }
+
+  .links {
+    margin-block-start: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  @media (min-width: 760px) {
+    section {
+      flex-direction: row;
+      text-align: start;
+      gap: 1rem;
+    }
+
+    img {
+      width: 40%;
+    }
+
+    .text {
+      width: fit-content;
+    }
+
+    h1 {
+      width: fit-content;
+    }
+
+    p {
+      max-width: 90%;
+      line-height: 1.25rem;
+    }
+
+    .links {
+      max-width: 350px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    section {
+      gap: 3rem;
+    }
+  }
+</style>

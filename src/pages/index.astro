@@ -1,25 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import { changeLanguage } from 'i18next'
+import Layout from "../layouts/Layout.astro";
+import { changeLanguage } from "i18next";
+import Hero from "../components/Hero/Hero.astro";
+import Work from "../components/Sections/Work/Work.astro";
+import Resume from "../components/Sections/Resume/Resume.astro";
+import Contact from "../components/Sections/Contact/Contact.astro";
 
-changeLanguage('en')
+changeLanguage("en");
 ---
 
 <Layout title="Xavier Vila Rubio">
-  <section class="section" id="work">
-    <h1>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, minus?
-    </h1>
-  </section>
-  <section class="section" id="resume">
-    <h1>
-      Voluptatibus doloribus mollitia temporibus. Enim quos culpa sint quibusdam
-      nulla!
-    </h1>
-  </section>
-  <section class="section" id="contact">
-    <h1>Excepturi amet velit, ad iste tempore molestiae omnis earum sed!</h1>
-  </section>
+  <Hero />
+  <Work />
+  <Resume />
+  <Contact />
 </Layout>
 
 <style>

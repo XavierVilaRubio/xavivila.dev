@@ -5,7 +5,7 @@ export default {
   i18next: {
     debug: true,
     initImmediate: false,
-    ns: ['common', 'home', 'work', 'resume', 'contact'],
+    ns: ['common', 'hero', 'work', 'resume', 'contact'],
     defaultNS: 'common',
     backend: {
       loadPath: './src/locales/{{lng}}/{{ns}}.json', // will look for json files inside language folders

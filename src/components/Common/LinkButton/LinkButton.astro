@@ -1,13 +1,19 @@
 ---
+import Icon from 'astro-icon'
+
 interface Props {
   label: string
   href: string
   theme?: string
+  iconLeft?: string
 }
-const { label, href, theme = 'primary' } = Astro.props
+const { label, href, theme = 'primary', iconLeft } = Astro.props
 ---
 
-<a href={href} class={`${theme}`}>{label}</a>
+<a href={href} class={`${theme}`}>
+  {iconLeft ? <Icon name={iconLeft} /> : ''}
+  {label}
+</a>
 
 <style>
   a {
@@ -16,8 +22,10 @@ const { label, href, theme = 'primary' } = Astro.props
     border-radius: 0.5rem;
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
     font-weight: 600;
+    transition: all 0.2s ease-in-out;
   }
 
   a.primary {
@@ -25,10 +33,25 @@ const { label, href, theme = 'primary' } = Astro.props
     background-color: var(--color-black);
     border: 1px solid var(--color-white);
   }
+  a.primary:hover {
+    color: var(--color-black);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black);
+  }
 
   a.secondary {
     color: var(--color-black);
     background-color: var(--color-white);
     border: 1px solid var(--color-black);
+  }
+  a.secondary:hover {
+    color: var(--color-white);
+    background-color: var(--color-black);
+    border: 1px solid var(--color-white);
+  }
+
+  svg {
+    height: 1.25rem;
+    margin-right: 0.5rem;
   }
 </style>

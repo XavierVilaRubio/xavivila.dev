@@ -1,0 +1,31 @@
+{
+  "projects": [
+    {
+      "id": 0,
+      "name": "CalcApp",
+      "description": "Calculator app made with Angular. This project was generated with Angular CLI version 11.1.1.",
+      "languages": ["Java", "Spring", "HTML&CSS", "Angular", "JavaScript"],
+      "previewLink": "",
+      "githubLink": "",
+      "image": "https://cdn.dribbble.com/users/551506/screenshots/4837987/dashboard-design-concept.jpg"
+    },
+    {
+      "id": 1,
+      "name": "CalcApp",
+      "description": "Calculator app made with Angular. This project was generated with Angular CLI version 11.1.1.",
+      "languages": ["Java", "Spring", "HTML&CSS", "Angular", "JavaScript"],
+      "previewLink": "",
+      "githubLink": "",
+      "image": "https://cdn.dribbble.com/users/551506/screenshots/4837987/dashboard-design-concept.jpg"
+    },
+    {
+      "id": 2,
+      "name": "CalcApp",
+      "description": "Calculator app made with Angular. This project was generated with Angular CLI version 11.1.1.",
+      "languages": ["Java", "Spring", "HTML&CSS", "Angular", "JavaScript"],
+      "previewLink": "",
+      "githubLink": "",
+      "image": "https://cdn.dribbble.com/users/551506/screenshots/4837987/dashboard-design-concept.jpg"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+---
+export interface LanguageTagProps {
+  language: string
+}
+
+const { language } = Astro.props
+---
+
+<div><p>{language}</p></div>
+
+<style>
+  p {
+    display: flex;
+    font-size: 0.875rem;
+  }
+  div {
+    display: flex;
+    background-color: #eaeef2;
+    /* background-color: red; */
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    width: fit-content;
+  }
+</style>

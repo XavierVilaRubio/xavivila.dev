@@ -13,6 +13,7 @@
   "dependencies": {
     "astro": "^1.3.0",
     "astro-i18next": "1.0.0-beta.12",
+    "astro-icon": "^0.7.3",
     "i18next-fs-backend": "^1.1.5"
   },
   "devDependencies": {

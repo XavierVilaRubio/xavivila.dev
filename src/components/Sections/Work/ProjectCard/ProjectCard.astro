@@ -1,0 +1,105 @@
+---
+import LinkButton from '../../../Common/LinkButton/LinkButton.astro'
+import LanguageTag, { LanguageTagProps } from './LanguageTag.astro'
+import { Icon } from 'astro-icon'
+
+export interface ProjectProps {
+  id: number
+  name: string
+  description: string
+  languages: Array<string>
+  previewLink: string
+  githubLink: string
+  image: string
+}
+
+const {
+  project: { id, name, description, languages, previewLink, githubLink, image },
+} = Astro.props
+---
+
+<div class="project-card" style={`--order: ${id}`}>
+  <img class="image" src={image} alt="" />
+  <h3>{name}</h3>
+  <div class="languages">
+    {
+      languages.map((language: LanguageTagProps) => (
+        <LanguageTag language={language} />
+      ))
+    }
+  </div>
+  <p class="description">{description}</p>
+  <div class="links">
+    <LinkButton
+      href={previewLink}
+      label="Preview"
+      iconLeft="iconoir:eye-empty"
+    />
+    <LinkButton
+      href={githubLink}
+      label="Github repo"
+      theme="secondary"
+      iconLeft="iconoir:github"
+    />
+  </div>
+</div>
+
+<style>
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    text-align: start;
+
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transition-delay: calc(200ms * var(--order));
+  }
+
+  .show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .image {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    max-height: 80%;
+  }
+
+  h3 {
+    margin-block-start: 0.5rem;
+    font-weight: 800;
+    font-size: 1.15rem;
+  }
+
+  .languages {
+    margin-block-start: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5rem;
+    row-gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+
+  .description {
+    margin-block-start: 1rem;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .links {
+    margin-block-start: 1rem;
+    display: flex;
+    gap: 1rem;
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  .project-card:hover .links {
+    transition: all 0.3s ease-in-out;
+    transform: translateY(0);
+    opacity: 1;
+  }
+</style>

@@ -1,4 +1,26 @@
 {
   "title": "Work",
-  "description": "Check my commercial and non commercial projects.\nIf you have any questions feel free to ask me for more information."
+  "description": "Check my commercial and non commercial projects.\nIf you have any questions feel free to ask me for more information.",
+  "content": [
+    {
+      "title": "Education",
+      "content": [
+        {
+          "title": "Java Complete Course",
+          "subtitle": "Software Development Academy",
+          "dates": "2018 - 2019"
+        }
+      ]
+    },
+    {
+      "title": "Work experience",
+      "content": [
+        {
+          "title": "eCommerce Developer",
+          "subtitle": "Trilogi - The eCommerce Agency",
+          "dates": "Sep 2020 - Present"
+        }
+      ]
+    }
+  ]
 }

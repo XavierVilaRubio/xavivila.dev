@@ -1,12 +1,43 @@
 ---
 import Section from '../../Common/Section/Section.astro'
 import { t } from 'i18next'
+import projects_data from '../../../data/projects_data.json'
+import type { ProjectProps } from './ProjectCard/ProjectCard.astro'
+import ProjectCard from './ProjectCard/ProjectCard.astro'
+
+const { projects } = projects_data
 ---
 
+<script is:inline>
+  const projectCardsIntersectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(({ target, isIntersecting }) => {
+        target.classList.toggle('show', isIntersecting)
+      })
+    },
+    {
+      threshold: 0.5,
+    }
+  )
+  document.addEventListener('DOMContentLoaded', () => {
+    const hiddenProjectCards = document.querySelectorAll('.project-card')
+    hiddenProjectCards.forEach((section) => {
+      projectCardsIntersectionObserver.observe(section)
+    })
+  })
+</script>
+
 <Section id="work">
-  {t('test')}
+  <div class="grid">
+    {projects.map((project: ProjectProps) => <ProjectCard project={project} />)}
+  </div>
 </Section>
 
 <style>
-
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 312px);
+    justify-content: center;
+    grid-gap: 3rem;
+  }
 </style>

@@ -1,4 +1,5 @@
 ---
+import Icon from 'astro-icon'
 import i18next from 'i18next'
 
 import { t, setDefaultNamespace } from 'i18next'
@@ -37,18 +38,7 @@ setDefaultNamespace('common')
     <div class="logo-and-menu">
       <img class="logo" src="/XV.svg" alt="Xavi Vila logo" />
       <button class="menu-button" id="menu-button">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="menu-icon"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h8m-8 6h16"></path>
-        </svg>
+        <Icon class="menu-icon" name="eva:menu-outline" />
       </button>
     </div>
     <nav class="nav-links" id="nav-links">
@@ -80,12 +70,12 @@ setDefaultNamespace('common')
         <ul class="social-list">
           <li>
             <a href="https://github.com/XavierVilaRubio" target="_blank">
-              <img class="icon" src="/icons/github.svg" alt="GitHub logo" />
+              <Icon class="icon" name="eva:github-outline" />
             </a>
           </li>
           <li>
             <a href="https://linkedin.com/in/XavierVilaRubio" target="_blank">
-              <img class="icon" src="/icons/linkedin.svg" alt="Linkedin logo" />
+              <Icon class="icon" name="eva:linkedin-outline" />
             </a>
           </li>
         </ul>
@@ -235,8 +225,8 @@ setDefaultNamespace('common')
     }
 
     .icon {
-      width: 16px;
-      height: 16px;
+      width: 1.15rem;
+      height: 1.15rem;
     }
   }
 </style>

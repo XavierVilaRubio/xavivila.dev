@@ -1,7 +1,6 @@
 ---
 import LinkButton from '../../../Common/LinkButton/LinkButton.astro'
 import LanguageTag, { LanguageTagProps } from './LanguageTag.astro'
-import { Icon } from 'astro-icon'
 
 export interface ProjectProps {
   id: number
@@ -30,16 +29,12 @@ const {
   </div>
   <p class="description">{description}</p>
   <div class="links">
-    <LinkButton
-      href={previewLink}
-      label="Preview"
-      iconLeft="iconoir:eye-empty"
-    />
+    <LinkButton href={previewLink} label="Preview" iconLeft="eva:eye-outline" />
     <LinkButton
       href={githubLink}
       label="Github repo"
       theme="secondary"
-      iconLeft="iconoir:github"
+      iconLeft="eva:github-outline"
     />
   </div>
 </div>

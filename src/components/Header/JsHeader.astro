@@ -1,4 +1,5 @@
 ---
+import { localizePath } from 'astro-i18next'
 import Icon from 'astro-icon'
 import i18next from 'i18next'
 
@@ -43,9 +44,19 @@ setDefaultNamespace('common')
     </div>
     <nav class="nav-links" id="nav-links">
       <ul class="links-list">
-        <li><a href="/#work">{t('navbar.work')}</a></li>
-        <li><a href="/#resume">{t('navbar.resume')}</a></li>
-        <li><a href="/#contact">{t('navbar.contact')}</a></li>
+        <li>
+          <a href={localizePath('/#work').slice(0, -1)}>{t('navbar.work')}</a>
+        </li>
+        <li>
+          <a href={localizePath('/#about_me').slice(0, -1)}
+            >{t('navbar.about_me')}
+          </a>
+        </li>
+        <li>
+          <a href={localizePath('/#contact').slice(0, -1)}
+            >{t('navbar.contact')}
+          </a>
+        </li>
       </ul>
       <div class="language-and-social-lists">
         <ul class="language-list">
@@ -86,10 +97,11 @@ setDefaultNamespace('common')
 
 <style>
   header {
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     background-color: white;
+    z-index: 1;
   }
 
   .wrapper {

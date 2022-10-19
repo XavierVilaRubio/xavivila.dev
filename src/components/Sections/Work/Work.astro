@@ -12,7 +12,10 @@ const { projects } = projects_data
   const projectCardsIntersectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(({ target, isIntersecting }) => {
-        target.classList.toggle('show', isIntersecting)
+        if (isIntersecting) {
+          target.classList.add('show')
+        }
+        // target.classList.toggle('show', isIntersecting)
       })
     },
     {

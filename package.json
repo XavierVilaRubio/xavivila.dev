@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "local": "astro dev",
+    "local": "astro-i18next generate && astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",

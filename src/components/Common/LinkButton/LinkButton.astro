@@ -6,11 +6,18 @@ interface Props {
   href: string
   theme?: string
   iconLeft?: string
+  target?: string
 }
-const { label, href, theme = 'primary', iconLeft } = Astro.props
+const {
+  label,
+  href,
+  theme = 'primary',
+  iconLeft,
+  target = '_self',
+} = Astro.props
 ---
 
-<a href={href} class={`${theme}`}>
+<a href={href} class={`${theme}`} target={target}>
   {iconLeft ? <Icon name={iconLeft} /> : ''}
   {label}
 </a>

@@ -29,12 +29,18 @@ const {
   </div>
   <p class="description">{description}</p>
   <div class="links">
-    <LinkButton href={previewLink} label="Preview" iconLeft="eva:eye-outline" />
+    <LinkButton
+      href={previewLink}
+      label="Preview"
+      iconLeft="eva:eye-outline"
+      target="_blank"
+    />
     <LinkButton
       href={githubLink}
       label="Github repo"
       theme="secondary"
       iconLeft="eva:github-outline"
+      target="_blank"
     />
   </div>
 </div>
@@ -52,10 +58,11 @@ const {
     max-width: 100%;
     border-radius: 0.5rem;
     max-height: 80%;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
   }
 
   h3 {
-    margin-block-start: 0.5rem;
+    margin-block-start: 0.75rem;
     font-weight: 800;
     font-size: 1.15rem;
   }

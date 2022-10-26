@@ -3,29 +3,29 @@
     {
       "id": 0,
       "name": "Links",
-      "description": "A simple responsive, static page for sharing my personal links.",
       "languages": ["JavaScript", "React", "NextJS", "TailwindCSS"],
       "previewLink": "https://links.xavivila.dev",
       "githubLink": "https://github.com/XavierVilaRubio/links",
-      "image": "/links.png"
+      "image": "/links.png",
+      "slug": "links"
     },
     {
       "id": 1,
       "name": "CalcApp",
-      "description": "Calculator app made with Angular. This project was generated with Angular CLI version 11.1.1.",
       "languages": ["Java", "Spring", "HTML&CSS", "Angular", "JavaScript"],
       "previewLink": "",
       "githubLink": "",
-      "image": "https://cdn.dribbble.com/users/551506/screenshots/4837987/dashboard-design-concept.jpg"
+      "image": "https://cdn.dribbble.com/users/551506/screenshots/4837987/dashboard-design-concept.jpg",
+      "slug": "calcapp"
     },
     {
       "id": 2,
       "name": "CalcApp",
-      "description": "Calculator app made with Angular. This project was generated with Angular CLI version 11.1.1.",
       "languages": ["Java", "Spring", "HTML&CSS", "Angular", "JavaScript"],
       "previewLink": "",
       "githubLink": "",
-      "image": "https://cdn.dribbble.com/users/551506/screenshots/4837987/dashboard-design-concept.jpg"
+      "image": "https://cdn.dribbble.com/users/551506/screenshots/4837987/dashboard-design-concept.jpg",
+      "slug": "calcapp"
     }
   ]
 }

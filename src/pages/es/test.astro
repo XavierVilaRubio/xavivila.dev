@@ -1,0 +1,58 @@
+---
+import { changeLanguage } from "i18next";
+
+changeLanguage("es");
+---
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('mousemove', (e) => {
+      // console.log(e)
+
+      const mouseX = e.clientX
+      const mouseY = e.clientY
+      const width = e.view?.innerWidth
+      const height = e.view?.innerHeight
+      // console.log(mouseX, mouseY)
+
+      // const angleDeg = angle(mouseX, mouseY)
+      // console.log(e)
+
+      // console.log(angleDeg)
+
+      const dot = document.getElementById('dot')
+      if (dot && height && width) {
+        dot.style.top = `${height - mouseY}px`
+        dot.style.left = `${width - mouseX}px`
+      }
+    })
+  })
+</script>
+
+<div id="root">
+  <h1>Test</h1>
+  <div id="dot" class="dot" style="top: 25%; left: 25%"></div>
+</div>
+
+<style>
+  body {
+    margin: 0;
+  }
+  div {
+    position: relative;
+    height: 100vh;
+    width: 100dvw;
+    display: grid;
+    place-items: center;
+  }
+
+  .dot {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: blue;
+    filter: blur(50px);
+    transition: all cubic-bezier(0.02, 0.96, 0.87, 0.12);
+  }
+</style>

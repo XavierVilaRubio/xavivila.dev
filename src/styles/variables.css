@@ -1,6 +1,8 @@
 :root {
   --background-black: #000000;
-  --background-white: #e3e3e3;
-  --color-black: #0c0e10;
-  --color-white: #ffffff;
+  /* --background-white: #e3e3e3; */
+  --background-white: #fef9fb;
+  --color-black: #1c2c4e;
+  --color-white: #fef9fb;
+  --color-accent: #00afaf;
 }

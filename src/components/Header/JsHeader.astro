@@ -12,7 +12,9 @@ setDefaultNamespace('common')
   const intersectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(({ target, isIntersecting }) => {
-        const navLink = document.querySelector(`a[href='/#${target.id}']`)
+        const navLink = document.querySelector(
+          `a[href='/#${target.id}'], a[href='/es/#${target.id}']`
+        )
         navLink?.classList.toggle('active', isIntersecting)
       })
     },
@@ -44,15 +46,15 @@ setDefaultNamespace('common')
     </div>
     <nav class="nav-links" id="nav-links">
       <ul class="links-list">
-        <li>
+        <li class="links-list-item">
           <a href={localizePath('/#work').slice(0, -1)}>{t('navbar.work')}</a>
         </li>
-        <li>
+        <li class="links-list-item">
           <a href={localizePath('/#about_me').slice(0, -1)}
             >{t('navbar.about_me')}
           </a>
         </li>
-        <li>
+        <li class="links-list-item">
           <a href={localizePath('/#contact').slice(0, -1)}
             >{t('navbar.contact')}
           </a>
@@ -104,8 +106,8 @@ setDefaultNamespace('common')
     background: #fff;
     background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0.5) 50%,
+      var(--color-background) 0%,
+      rgba(var(--color-background-rgb) 0.5) 50%,
       rgba(255, 255, 255, 0) 100%
     );
 
@@ -181,14 +183,15 @@ setDefaultNamespace('common')
     width: 20px;
     height: 20px;
   }
-
-  .active {
-    /* font-weight: 700; */
+  .active,
+  .links-list-item:hover > a,
+  .icon:hover {
     color: var(--color-accent);
+    transition: color 0.3s ease;
   }
-
   .language-button {
     font-size: inherit;
+    cursor: pointer;
   }
 
   .social-list li,
@@ -208,7 +211,6 @@ setDefaultNamespace('common')
 
   .language-list p {
     font-size: 0.85em;
-    line-height: 12px;
   }
 
   @media (min-width: 768px) {

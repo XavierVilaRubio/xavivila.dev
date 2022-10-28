@@ -9,9 +9,15 @@
     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+body {
+  background-color: var(--color-background);
+  overflow-x: hidden;
+}
+
 body,
+button,
 a {
-  color: var(--color-black);
+  color: var(--color-text);
 }
 
 a {

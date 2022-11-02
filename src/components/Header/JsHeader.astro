@@ -46,48 +46,54 @@ setDefaultNamespace('common')
     </div>
     <nav class="nav-links" id="nav-links">
       <ul class="links-list">
-        <li class="links-list-item">
-          <a href={localizePath('/#work').slice(0, -1)}>{t('navbar.work')}</a>
-        </li>
-        <li class="links-list-item">
-          <a href={localizePath('/#about_me').slice(0, -1)}
-            >{t('navbar.about_me')}
-          </a>
-        </li>
-        <li class="links-list-item">
-          <a href={localizePath('/#contact').slice(0, -1)}
-            >{t('navbar.contact')}
-          </a>
-        </li>
+        {
+          ['work', 'about_me', 'contact'].map((key) => (
+            <li class="links-list-item">
+              <a href={localizePath(`/#${key}`).slice(0, -1)}>
+                {t(`navbar.${key}`)}
+              </a>
+            </li>
+          ))
+        }
       </ul>
       <div class="language-and-social-lists">
         <ul class="language-list">
           <li>
-            <button
-              onclick="location = '/' "
-              class={`language-button ${
+            <a
+              href="/"
+              hreflang="en"
+              class={`language-link ${
                 i18next.resolvedLanguage === 'en' && 'active'
-              }`}>EN</button
+              }`}>EN</a
             >
           </li>
-          <p>|</p>
+          <li><p>|</p></li>
           <li>
-            <button
-              onclick="location = '/es/' "
-              class={`language-button ${
+            <a
+              href="/es"
+              hreflang="es"
+              class={`language-link ${
                 i18next.resolvedLanguage === 'es' && 'active'
-              }`}>ES</button
+              }`}>ES</a
             >
           </li>
         </ul>
         <ul class="social-list">
           <li>
-            <a href="https://github.com/XavierVilaRubio" target="_blank">
+            <a
+              href="https://github.com/XavierVilaRubio"
+              target="_blank"
+              aria-label="Go to Xavier's GitHub page"
+            >
               <Icon class="icon" name="eva:github-outline" />
             </a>
           </li>
           <li>
-            <a href="https://linkedin.com/in/XavierVilaRubio" target="_blank">
+            <a
+              href="https://linkedin.com/in/XavierVilaRubio"
+              target="_blank"
+              aria-label="Go to Xavier's LinkedIn page"
+            >
               <Icon class="icon" name="eva:linkedin-outline" />
             </a>
           </li>
@@ -172,7 +178,8 @@ setDefaultNamespace('common')
     max-height: 350px;
   }
 
-  button {
+  button,
+  .language-link {
     display: flex;
     border: none;
     background: none;
@@ -188,10 +195,6 @@ setDefaultNamespace('common')
   .icon:hover {
     color: var(--color-accent);
     transition: color 0.3s ease;
-  }
-  .language-button {
-    font-size: inherit;
-    cursor: pointer;
   }
 
   .social-list li,

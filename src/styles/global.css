@@ -1,6 +1,27 @@
 @import 'variables.css';
 @import 'scrollbar.css';
 
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Black.ttf') format('truetype');
+  font-weight: bolder;
+  font-style: normal;
+}
+
 :root {
   scroll-behavior: smooth;
   scroll-padding-block-start: 0.5rem;

@@ -65,7 +65,7 @@ setDefaultNamespace('common')
               href="/"
               hreflang="en"
               class={`language-link ${
-                i18next.resolvedLanguage === 'en' && 'active'
+                i18next.resolvedLanguage === 'en' ? 'active' : ''
               }`}>EN</a
             >
           </li>
@@ -75,7 +75,7 @@ setDefaultNamespace('common')
               href="/es"
               hreflang="es"
               class={`language-link ${
-                i18next.resolvedLanguage === 'es' && 'active'
+                i18next.resolvedLanguage === 'es' ? 'active' : ''
               }`}>ES</a
             >
           </li>

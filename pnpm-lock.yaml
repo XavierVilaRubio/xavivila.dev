@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@fontsource/lato': ^4.5.10
   astro: ^1.3.0
   astro-i18next: 1.0.0-beta.12
   astro-icon: ^0.7.3
@@ -10,7 +9,6 @@ specifiers:
   postcss-import: ^15.0.0
 
 dependencies:
-  '@fontsource/lato': 4.5.10
   astro: 1.3.0
   astro-i18next: 1.0.0-beta.12_astro@1.3.0
   astro-icon: 0.7.3
@@ -406,10 +404,6 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
-
-  /@fontsource/lato/4.5.10:
-    resolution: {integrity: sha512-2hYR6r661Cq9B8zugtu6yxuOKqrVhAgfOSaPSq8XoxbC4ebsl0KOTy/vPoP+9U7JuQVLfrmikirW4a9Z0nDUug==}
-    dev: false
 
   /@jridgewell/gen-mapping/0.1.1:
     resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==}

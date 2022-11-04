@@ -17,7 +17,7 @@ const {
 } = Astro.props
 ---
 
-<a href={href} class={`${theme}`} target={target}>
+<a href={href ? href : '#'} class={`${theme}`} target={target}>
   {iconLeft ? <Icon name={iconLeft} /> : ''}
   {label}
 </a>

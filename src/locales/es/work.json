@@ -2,7 +2,56 @@
   "title": "Proyectos",
   "description": "Consulta mis projectos comerciales y no comerciales.\nSi tienes alguna pregunta no dudes en contactar conmigo.",
   "projects": {
-    "links": "Una sencilla pagina responsive y estatica para compartir mis enlaces personales.",
-    "calcapp": "Aplicación de calculadora hecha con Angular. Este proyecto ha sido generado con Angular CLI version 11.1.1."
+    "links": {
+      "description": "Una sencilla pagina responsive y estatica para compartir mis enlaces personales.",
+      "modal": [
+        {
+          "name": "Introducción",
+          "content": "Una sencilla pagina responsive y estatica para compartir mis enlaces personales."
+        },
+        {
+          "name": "Introducción",
+          "content": "Una sencilla pagina responsive y estatica para compartir mis enlaces personales."
+        },
+        {
+          "name": "Introducción",
+          "content": "Una sencilla pagina responsive y estatica para compartir mis enlaces personales."
+        }
+      ]
+    },
+    "calcapp": {
+      "description": "Aplicación de calculadora hecha con Angular. Este proyecto ha sido generado con Angular CLI version 11.1.1.",
+      "modal": [
+        {
+          "name": "Introducción",
+          "content": "Aplicación de calculadora hecha con Angular. Este proyecto ha sido generado con Angular CLI version 11.1.1."
+        },
+        {
+          "name": "Introducción",
+          "content": "Aplicación de calculadora hecha con Angular. Este proyecto ha sido generado con Angular CLI version 11.1.1."
+        },
+        {
+          "name": "Introducción",
+          "content": "Aplicación de calculadora hecha con Angular. Este proyecto ha sido generado con Angular CLI version 11.1.1."
+        }
+      ]
+    },
+    "calcapp2": {
+      "description": "Aplicación de calculadora hecha con Angular. Este proyecto ha sido generado con Angular CLI version 11.1.1.",
+      "modal": [
+        {
+          "name": "Introduction",
+          "content": "Aplicación de calculadora hecha con Angular. Este proyecto ha sido generado con Angular CLI version 11.1.1."
+        },
+        {
+          "name": "Introduction",
+          "content": "Aplicación de calculadora hecha con Angular. Este proyecto ha sido generado con Angular CLI version 11.1.1."
+        },
+        {
+          "name": "Introduction",
+          "content": "Aplicación de calculadora hecha con Angular. Este proyecto ha sido generado con Angular CLI version 11.1.1."
+        }
+      ]
+    }
   }
 }

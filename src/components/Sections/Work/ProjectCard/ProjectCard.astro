@@ -1,6 +1,7 @@
 ---
 import { t } from 'i18next'
 import LinkButton from '../../../Common/LinkButton/LinkButton.astro'
+import Icon from 'astro-icon'
 import LanguageTag, { LanguageTagProps } from './LanguageTag.astro'
 
 export interface ProjectProps {
@@ -16,9 +17,42 @@ export interface ProjectProps {
 const {
   project: { id, name, languages, previewLink, githubLink, image, slug },
 } = Astro.props
+
+const a = t(`projects.${slug}.modal`, { returnObjects: true })
+const b = t(`projects.${slug}.modal`, {
+  returnedObjectHandler: (key: any, value: any, options: any) => {
+    console.log(key)
+    console.log(value)
+    console.log(options)
+  },
+  returnDetails: true,
+  returnObjects: true,
+})
 ---
 
+<script is:inline define:vars={{ slug, a, b }}>
+  // console.log('a: ', a)
+  console.log(b)
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById(`modal-${slug}`)
+    const openModal = document.getElementById(`button-open-${slug}`)
+    const closeModal = document.getElementById(`button-close-${slug}`)
+
+    openModal.addEventListener('click', () => {
+      modal.showModal()
+      document.body.style.overflow = 'hidden'
+      document.body.style.marginInlineEnd = '20px'
+    })
+    closeModal.addEventListener('click', () => {
+      modal.close()
+      document.body.style.overflow = ''
+      document.body.style.marginInlineEnd = ''
+    })
+  })
+</script>
+
 <div class="project-card" style={`--order: ${id}`}>
+  <button class="button-open" id={`button-open-${slug}`}>open modal</button>
   <img class="image" src={image} alt="" />
   <h3>{name}</h3>
   <div class="languages">
@@ -28,7 +62,7 @@ const {
       ))
     }
   </div>
-  <p class="description">{t(`projects.${slug}`)}</p>
+  <p class="description">{t(`projects.${slug}.description`)}</p>
   <div class="links">
     <LinkButton
       href={previewLink}
@@ -45,8 +79,46 @@ const {
     />
   </div>
 </div>
+<dialog class="modal" id={`modal-${slug}`}>
+  <button class="button-close" id={`button-close-${slug}`}
+    ><Icon class="icon" name="eva:close-circle-outline" />
+  </button>
+  {
+    t(`projects.${slug}.modal`, { returnObjects: true }).map(
+      (name: string, content: string) => (
+        <div class="modal-section">
+          <h3>{name}</h3>
+          <p>{content}</p>
+        </div>
+      )
+    )
+  }
+</dialog>
 
 <style>
+  .modal {
+    width: 80%;
+    height: 80%;
+    border: none;
+    border-radius: 1rem;
+  }
+
+  .button-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    padding: 0;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
   .project-card {
     display: flex;
     flex-direction: column;

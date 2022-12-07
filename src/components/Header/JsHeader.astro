@@ -4,11 +4,13 @@ import Icon from 'astro-icon'
 import i18next from 'i18next'
 
 import { t, setDefaultNamespace } from 'i18next'
+console.log(i18next)
 
 setDefaultNamespace('common')
+const currentLanguage = i18next.language
 ---
 
-<script is:inline>
+<script is:inline define:vars={currentLanguage}>
   const intersectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(({ target, isIntersecting }) => {

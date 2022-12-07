@@ -1,8 +1,9 @@
 ---
-import { t } from 'i18next'
+import { t, setDefaultNamespace } from 'i18next'
 import LinkButton from '../../../Common/LinkButton/LinkButton.astro'
 import Icon from 'astro-icon'
 import LanguageTag, { LanguageTagProps } from './LanguageTag.astro'
+setDefaultNamespace('work')
 
 export interface ProjectProps {
   id: number
@@ -18,21 +19,21 @@ const {
   project: { id, name, languages, previewLink, githubLink, image, slug },
 } = Astro.props
 
-const a = t(`projects.${slug}.modal`, { returnObjects: true })
-const b = t(`projects.${slug}.modal`, {
-  returnedObjectHandler: (key: any, value: any, options: any) => {
-    console.log(key)
-    console.log(value)
-    console.log(options)
-  },
-  returnDetails: true,
+const projectContent = t<
+  {
+    name: string
+    content: string
+  }[]
+>(`projects.${slug}.modal`, {
   returnObjects: true,
-})
+} as const) as Array<{
+  name: string
+  content: string
+}>
+console.log(projectContent.length)
 ---
 
-<script is:inline define:vars={{ slug, a, b }}>
-  // console.log('a: ', a)
-  console.log(b)
+<script is:inline define:vars={{ slug }}>
   document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById(`modal-${slug}`)
     const openModal = document.getElementById(`button-open-${slug}`)
@@ -80,19 +81,23 @@ const b = t(`projects.${slug}.modal`, {
   </div>
 </div>
 <dialog class="modal" id={`modal-${slug}`}>
+  <!-- <div class="wrapper"> -->
   <button class="button-close" id={`button-close-${slug}`}
     ><Icon class="icon" name="eva:close-circle-outline" />
   </button>
   {
-    t(`projects.${slug}.modal`, { returnObjects: true }).map(
-      (name: string, content: string) => (
-        <div class="modal-section">
-          <h3>{name}</h3>
-          <p>{content}</p>
-        </div>
-      )
-    )
+    projectContent &&
+      projectContent.length > 0 &&
+      Array.apply(null, Array(projectContent.length))
+        .map(() => {})
+        .map((_, index) => (
+          <div class="modal-section">
+            <h3>{t(`projects.${slug}.modal.${index}.name`)}</h3>
+            <p>{t(`projects.${slug}.modal.${index}.content`)}</p>
+          </div>
+        ))
   }
+  <!-- </div> -->
 </dialog>
 
 <style>
@@ -105,8 +110,9 @@ const b = t(`projects.${slug}.modal`, {
 
   .button-close {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    /* top: 0; */
+    right: 0;
+    transform: translateX(-50%);
     border: none;
     background: none;
     padding: 0;

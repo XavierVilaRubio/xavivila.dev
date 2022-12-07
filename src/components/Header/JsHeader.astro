@@ -1,17 +1,13 @@
 ---
 import { localizePath } from 'astro-i18next'
 import Icon from 'astro-icon'
-import i18next from 'i18next'
-
 import { t, setDefaultNamespace } from 'i18next'
-console.log(i18next)
 
 setDefaultNamespace('common')
-const supportedLanguages = i18next.languages
-const currentLanguage = i18next.language
+const { pathname } = Astro.url
 ---
 
-<script is:inline define:vars={currentLanguage}>
+<script is:inline>
   const intersectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(({ target, isIntersecting }) => {
@@ -63,18 +59,22 @@ const currentLanguage = i18next.language
       </ul>
       <div class="language-and-social-lists">
         <ul class="language-list">
-          {
-            supportedLanguages.map((supportedLanguage) => (
-              <li>
-                <a
-                  class={supportedLanguage === currentLanguage ? 'active' : ''}
-                  href={localizePath('/', supportedLanguage)}
-                >
-                  {supportedLanguage}
-                </a>
-              </li>
-            ))
-          }
+          <li>
+            <a
+              href="/"
+              hreflang="en"
+              class={`language-link ${pathname === '/' ? 'active' : ''}`}>EN</a
+            >
+          </li>
+          <li><p>|</p></li>
+          <li>
+            <a
+              href="/es"
+              hreflang="es"
+              class={`language-link ${pathname === '/es' ? 'active' : ''}`}
+              >ES</a
+            >
+          </li>
         </ul>
         <ul class="social-list">
           <li>

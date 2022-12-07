@@ -6,15 +6,16 @@
       "description": "A simple responsive, static page for sharing my personal links.",
       "modal": [
         {
-          "name": "Introduction",
+          "name": "Introduction 1",
           "content": "This is a simple responsive, static page for sharing my personal links. It was made with HTML, CSS and JavaScript. It is hosted on GitHub Pages and the source code is available on GitHub."
         },
         {
-          "name": "Introduction",
-          "content": "This is a simple responsive, static page for sharing my personal links. It was made with HTML, CSS and JavaScript. It is hosted on GitHub Pages and the source code is available on GitHub."
+          "name": "Introduction 2",
+          "content": "This is a simple responsive, static page for sharing my personal links. It was made with HTML, CSS and JavaScript. It is hosted on GitHub Pages and the source code is available on GitHub.",
+          "image": "/projects/links/links.webp"
         },
         {
-          "name": "Introduction",
+          "name": "Introduction 3",
           "content": "This is a simple responsive, static page for sharing my personal links. It was made with HTML, CSS and JavaScript. It is hosted on GitHub Pages and the source code is available on GitHub."
         }
       ]

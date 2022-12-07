@@ -81,7 +81,6 @@ console.log(projectContent.length)
   </div>
 </div>
 <dialog class="modal" id={`modal-${slug}`}>
-  <!-- <div class="wrapper"> -->
   <button class="button-close" id={`button-close-${slug}`}
     ><Icon class="icon" name="eva:close-circle-outline" />
   </button>
@@ -94,10 +93,18 @@ console.log(projectContent.length)
           <div class="modal-section">
             <h3>{t(`projects.${slug}.modal.${index}.name`)}</h3>
             <p>{t(`projects.${slug}.modal.${index}.content`)}</p>
+            {t([`projects.${slug}.modal.${index}.image`, '']) ? (
+              <img
+                src={t(`projects.${slug}.modal.${index}.image`)}
+                alt=""
+                srcset=""
+              />
+            ) : (
+              'adsads'
+            )}
           </div>
         ))
   }
-  <!-- </div> -->
 </dialog>
 
 <style>
@@ -106,6 +113,10 @@ console.log(projectContent.length)
     height: 80%;
     border: none;
     border-radius: 1rem;
+  }
+
+  .modal img {
+    max-width: 100%;
   }
 
   .button-close {

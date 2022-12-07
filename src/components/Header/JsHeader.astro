@@ -7,6 +7,7 @@ import { t, setDefaultNamespace } from 'i18next'
 console.log(i18next)
 
 setDefaultNamespace('common')
+const supportedLanguages = i18next.languages
 const currentLanguage = i18next.language
 ---
 
@@ -62,25 +63,18 @@ const currentLanguage = i18next.language
       </ul>
       <div class="language-and-social-lists">
         <ul class="language-list">
-          <li>
-            <a
-              href="/"
-              hreflang="en"
-              class={`language-link ${
-                i18next.language === 'en' ? 'active' : ''
-              }`}>EN</a
-            >
-          </li>
-          <li><p>|</p></li>
-          <li>
-            <a
-              href="/es"
-              hreflang="es"
-              class={`language-link ${
-                i18next.language === 'es' ? 'active' : ''
-              }`}>ES</a
-            >
-          </li>
+          {
+            supportedLanguages.map((supportedLanguage) => (
+              <li>
+                <a
+                  class={supportedLanguage === currentLanguage ? 'active' : ''}
+                  href={localizePath('/', supportedLanguage)}
+                >
+                  {supportedLanguage}
+                </a>
+              </li>
+            ))
+          }
         </ul>
         <ul class="social-list">
           <li>

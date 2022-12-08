@@ -39,6 +39,10 @@ console.log(projectContent.length)
     const openModal = document.getElementById(`button-open-${slug}`)
     const closeModal = document.getElementById(`button-close-${slug}`)
 
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) modal.close()
+    })
+
     openModal.addEventListener('click', () => {
       modal.showModal()
       document.body.style.overflow = 'hidden'

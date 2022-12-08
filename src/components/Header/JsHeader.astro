@@ -1,10 +1,11 @@
 ---
 import { localizePath } from 'astro-i18next'
+import i18next from 'i18next'
 import Icon from 'astro-icon'
+
 import { t, setDefaultNamespace } from 'i18next'
 
 setDefaultNamespace('common')
-const { pathname } = Astro.url
 ---
 
 <script is:inline>
@@ -36,6 +37,7 @@ const { pathname } = Astro.url
 </script>
 
 <header>
+  {}
   <div class="wrapper">
     <div class="logo-and-menu">
       <a href={localizePath('/#').slice(0, -1)}>
@@ -63,7 +65,9 @@ const { pathname } = Astro.url
             <a
               href="/"
               hreflang="en"
-              class={`language-link ${pathname === '/' ? 'active' : ''}`}>EN</a
+              class={`language-link ${
+                i18next.resolvedLanguage === 'en' ? 'active' : ''
+              }`}>EN</a
             >
           </li>
           <li><p>|</p></li>
@@ -71,8 +75,9 @@ const { pathname } = Astro.url
             <a
               href="/es"
               hreflang="es"
-              class={`language-link ${pathname === '/es' ? 'active' : ''}`}
-              >ES</a
+              class={`language-link ${
+                i18next.resolvedLanguage === 'es' ? 'active' : ''
+              }`}>ES</a
             >
           </li>
         </ul>

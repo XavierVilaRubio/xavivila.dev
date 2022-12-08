@@ -21,16 +21,16 @@ const {
 
 <a
   href={href ? href : '#'}
-  class={`${theme}`}
+  class={`btn btn--${theme}`}
   target={target}
   aria-label={ariaLabel}
 >
-  {iconLeft ? <Icon name={iconLeft} /> : ''}
+  {iconLeft ? <Icon name={iconLeft} class="btn__icon" /> : ''}
   {label}
 </a>
 
 <style>
-  a {
+  .btn {
     min-width: 64px;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
@@ -42,29 +42,29 @@ const {
     transition: all 0.2s ease-in-out;
   }
 
-  a.primary {
+  .btn--primary {
     color: var(--button-primary-text);
     background-color: var(--button-primary-background);
     border: 1px solid var(--button-primary-border);
   }
-  a.primary:hover {
+  .btn--primary:hover {
     color: var(--button-primary-hover-text);
     background-color: var(--button-primary-hover-background);
     border: 1px solid var(--button-primary-hover-border);
   }
 
-  a.secondary {
+  .btn--secondary {
     color: var(--button-secondary-text);
     background-color: var(--button-secondary-background);
     border: 1px solid var(--button-secondary-border);
   }
-  a.secondary:hover {
+  .btn--secondary:hover {
     color: var(--button-secondary-hover-text);
     background-color: var(--button-secondary-hover-background);
     border: 1px solid var(--button-secondary-hover-border);
   }
 
-  svg {
+  .btn__icon {
     height: 1.25rem;
     margin-right: 0.5rem;
   }

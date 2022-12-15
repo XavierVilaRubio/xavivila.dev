@@ -1,0 +1,50 @@
+---
+import JsHeader from '../components/Header/JsHeader.astro'
+import '../styles/reset.css'
+import '../styles/global.css'
+import i18next from 'i18next'
+import { HeadHrefLangs } from 'astro-i18next/components'
+import '@fontsource/lato'
+import '@fontsource/lato/700.css'
+import '@fontsource/lato/900.css'
+
+export interface Props {
+  title: string
+}
+
+const { frontmatter } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang={i18next.resolvedLanguage}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    /> -->
+    <meta name="generator" content={Astro.generator} />
+    <!-- <meta
+      name="description"
+      content="Hi, I'm Xavi and I'm a Frontend Developer."
+    /> -->
+    <title>{frontmatter.title}</title>
+    <HeadHrefLangs />
+  </head>
+  <body>
+    <JsHeader />
+    <slot />
+    <style is:global>
+      html {
+        font-family: system-ui, sans-serif;
+      }
+      body {
+        margin: 0;
+      }
+    </style>
+  </body>
+</html>

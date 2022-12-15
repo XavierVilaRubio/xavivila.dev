@@ -21,7 +21,7 @@ const { projects } = projects_data
       threshold: 0.5,
     }
   )
-  const hiddenProjectCards = document.querySelectorAll('.project-card')
+  const hiddenProjectCards = document.querySelectorAll('article.card')
   hiddenProjectCards.forEach((section) => {
     projectCardsIntersectionObserver.observe(section)
   })

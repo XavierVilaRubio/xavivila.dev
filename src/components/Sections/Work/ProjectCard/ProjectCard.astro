@@ -1,5 +1,6 @@
 ---
 import { t, setDefaultNamespace } from 'i18next'
+import { localizePath } from 'astro-i18next'
 import LinkButton from '../../../Common/LinkButton/LinkButton.astro'
 import Icon from 'astro-icon'
 import LanguageTag, { LanguageTagProps } from './LanguageTag.astro'
@@ -33,60 +34,24 @@ const projectContent = t<
 ---
 
 <script>
-  const openModal = (modal: HTMLDialogElement) => {
-    if (modal.getAttribute('open') === null) {
-      modal.showModal()
-      document.body.style.overflow = 'hidden'
-      document.body.style.marginInlineEnd = '20px'
+  const cards = document.querySelectorAll('article.card')
+  cards.forEach((card) => {
+    const link = card.querySelector('a')
+    if (link) {
+      const url = link.getAttribute('href')
+      card.addEventListener('click', (e) => {
+        if (url) {
+          location.href = url
+          e.preventDefault
+        }
+      })
     }
-  }
-  const closeModal = (modal: HTMLDialogElement) => {
-    if (modal.getAttribute('open') !== null) {
-      modal.close()
-      document.body.style.overflow = ''
-      document.body.style.marginInlineEnd = ''
-    }
-  }
-
-  const modals = document.querySelectorAll(
-    'dialog.modal'
-  ) as NodeListOf<HTMLDialogElement>
-  const openModalButtons = document.querySelectorAll('a.open-modal')
-  const closeModalButtons = document.querySelectorAll('button.button-close')
-
-  // modals.forEach((modal) => {
-  //   modal.addEventListener('click', ({ target }) => {
-  //     if (target === modal) closeModal(modal)
-  //   })
-  // })
-  openModalButtons.forEach((openModalButton) => {
-    openModalButton.addEventListener('click', () => {
-      const modal = document.getElementById(
-        openModalButton.id.replace('button-open', 'modal')
-      ) as HTMLDialogElement
-      console.log(modal)
-      openModal(modal)
-    })
-  })
-  closeModalButtons.forEach((closeModalButton) => {
-    closeModalButton.addEventListener('click', () => {
-      const modal = document.getElementById(
-        closeModalButton.id.replace('button-close', 'modal')
-      ) as HTMLDialogElement
-      closeModal(modal)
-    })
   })
 </script>
 
-<a
-  class="project-card open-modal"
-  style={`--order: ${id}`}
-  id={`button-open-${slug}`}
-  role="button"
->
-  <!-- <button class="button-open" id={`button-open-${slug}`}>open modal</button> -->
+<article class="card reorder" style={`--order: ${id}`}>
+  <h3><a href={localizePath(`/projects/${slug}`)}>{name}</a></h3>
   <img class="image" src={image} alt="" />
-  <h3>{name}</h3>
   <div class="languages">
     {
       languages.map((language: LanguageTagProps) => (
@@ -95,7 +60,7 @@ const projectContent = t<
     }
   </div>
   <p class="description">{t(`projects.${slug}.description`)}</p>
-</a>
+</article>
 
 <dialog class="modal" id={`modal-${slug}`}>
   <button class="button-close" id={`button-close-${slug}`}
@@ -140,50 +105,34 @@ const projectContent = t<
 </dialog>
 
 <style>
-  .modal {
-    width: 80%;
-    height: 80%;
-    border: none;
-    border-radius: 1rem;
-  }
-
-  .modal img {
-    max-width: 100%;
-  }
-
-  .modal-links {
-    margin-block-start: 2rem;
-    display: flex;
-    gap: 1rem;
-  }
-
-  .button-close {
-    position: absolute;
-    /* top: 0; */
-    right: 0;
-    transform: translateX(-50%);
-    border: none;
-    background: none;
-    padding: 0;
-    display: flex;
-    cursor: pointer;
-  }
-
-  .icon {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .project-card {
+  .card {
     display: flex;
     flex-direction: column;
     margin-inline: auto;
     text-align: start;
     max-width: 100%;
     cursor: pointer;
+    position: relative;
+  }
+
+  .card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    /* box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px; */
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .card:hover::after {
+    opacity: 1;
   }
 
   .image {
+    order: -1;
     /* aspect-ratio: 16/9; */
     max-width: 100%;
     border-radius: 0.5rem;
@@ -230,7 +179,7 @@ const projectContent = t<
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .project-card {
+    .card {
       opacity: 0;
       transform: translateY(1rem);
       transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -250,7 +199,7 @@ const projectContent = t<
       transition: all 0.3s ease-in-out;
     }
 
-    .project-card:hover .links {
+    .card:hover .links {
       transform: translateY(0);
       opacity: 1;
     }

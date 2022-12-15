@@ -7,19 +7,17 @@ setDefaultNamespace('hero')
 ---
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.addEventListener('mousemove', (e) => {
-      const mouseX = e.clientX
-      const mouseY = e.clientY
-      const width = e.view?.innerWidth
-      const height = e.view?.innerHeight
+  document.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX
+    const mouseY = e.clientY
+    const width = e.view?.innerWidth
+    const height = e.view?.innerHeight
 
-      const dot = document.getElementById('dot')
-      if (dot && height && width) {
-        dot.style.top = `${height - mouseY}px`
-        dot.style.left = `${width - mouseX}px`
-      }
-    })
+    const dot = document.getElementById('dot')
+    if (dot && height && width) {
+      dot.style.top = `${height - mouseY}px`
+      dot.style.left = `${width - mouseX}px`
+    }
   })
 </script>
 

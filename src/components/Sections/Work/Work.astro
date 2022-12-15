@@ -7,7 +7,7 @@ import ProjectCard from './ProjectCard/ProjectCard.astro'
 const { projects } = projects_data
 ---
 
-<script is:inline>
+<script>
   const projectCardsIntersectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(({ target, isIntersecting }) => {
@@ -21,11 +21,9 @@ const { projects } = projects_data
       threshold: 0.5,
     }
   )
-  document.addEventListener('DOMContentLoaded', () => {
-    const hiddenProjectCards = document.querySelectorAll('.project-card')
-    hiddenProjectCards.forEach((section) => {
-      projectCardsIntersectionObserver.observe(section)
-    })
+  const hiddenProjectCards = document.querySelectorAll('.project-card')
+  hiddenProjectCards.forEach((section) => {
+    projectCardsIntersectionObserver.observe(section)
   })
 </script>
 

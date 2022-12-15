@@ -8,7 +8,7 @@ import { t, setDefaultNamespace } from 'i18next'
 setDefaultNamespace('common')
 ---
 
-<script is:inline>
+<script>
   const intersectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(({ target, isIntersecting }) => {
@@ -22,18 +22,16 @@ setDefaultNamespace('common')
       threshold: 0.5,
     }
   )
-  document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('section')
-    sections.forEach((section) => {
-      intersectionObserver.observe(section)
-    })
-
-    document
-      .getElementById('menu-button')
-      .addEventListener('click', function () {
-        document.getElementById('nav-links').classList.toggle('show')
-      })
+  const sections = document.querySelectorAll('section')
+  sections.forEach((section) => {
+    intersectionObserver.observe(section)
   })
+
+  document
+    .getElementById('menu-button')
+    ?.addEventListener('click', () =>
+      document.getElementById('nav-links')?.classList.toggle('show')
+    )
 </script>
 
 <header>

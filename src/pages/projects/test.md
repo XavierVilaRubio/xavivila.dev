@@ -1,6 +1,5 @@
 ---
-layout: ../layouts/ProjectLayout.astro
-
+layout: ../../layouts/ProjectLayout.astro
 title: Why your GitHub profile should stand out?
 description: Last week I hosted a Twitter Space 🎙️ where I got to interact with amazing speakers on GitHub... Tagged with github, beginners, career.
 ---

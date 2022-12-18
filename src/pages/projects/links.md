@@ -1,8 +1,12 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
 title: Links
+description: A simple responsive, static page for sharing my personal links.
 ---
 
 # Links
+This simple project it's only an alternative to the typical "linktree" page.
+As this was a very basic project without much design, I decided to use <a target="_blank" href="https://tailwindcss.com/">TailwindCSS</a>.
+I also used NextJS because it's production-ready and it's very easy to use.
 
-Aliqua aute reprehenderit proident aliquip labore velit magna aute laboris. Ut dolore eu nulla irure laborum nisi proident sit laborum nulla et voluptate laboris elit. Ullamco eiusmod nostrud exercitation labore anim. In dolor ea irure aliqua exercitation ad officia fugiat aliqua et elit labore ullamco occaecat.
+![Image](/projects/links/links.webp)

@@ -16,11 +16,15 @@ jobs:
         node-version: [18.x]
 
     steps:
-    - uses: actions/checkout@v3
-    
     - name: Setup pnpm
       uses: pnpm/action-setup@v2.2.4
       with:
           version: 6.0.2
     - run: pnpm i
     - run: pnpm build
+
+    - uses: actions/checkout@v3
+    - name: copy
+      run: |
+        rm -rf /var/www/wip
+        cp -r /root/actions-runner/_work/xavivila.dev/xavivila.dev/dist /var/www/wip

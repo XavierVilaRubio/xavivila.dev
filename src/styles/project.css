@@ -1,0 +1,43 @@
+article.content {
+  width: min(90%, 75rem);
+  margin-inline: auto;
+  margin-block-end: 2rem;
+}
+
+article.content h1 {
+  font-weight: 800;
+  font-size: 2rem;
+  font-size: clamp(2rem, 1.4390243902439024rem + 2.4390243902439024vw, 3rem);
+  margin-block: 2rem 1.5rem;
+}
+article.content h2 {
+  font-weight: 800;
+  font-size: 1.5rem;
+  font-size: clamp(
+    1.5rem,
+    0.9390243902439024rem + 2.4390243902439024vw,
+    2.5rem
+  );
+  margin-block: 1.5rem 1rem;
+}
+
+article.content p {
+  font-size: 1.125rem;
+  font-size: clamp(
+    1.125rem,
+    1.0548780487804879rem + 0.3048780487804878vw,
+    1.25rem
+  );
+  line-height: 1.5;
+}
+article.content p + p {
+  margin-block-start: 1rem;
+}
+article.content p:has(img) {
+  text-align: center;
+}
+
+article.content img {
+  max-width: 100%;
+  max-height: calc(50vh + 180px);
+}

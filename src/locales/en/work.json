@@ -2,57 +2,8 @@
   "title": "Work",
   "description": "Check my commercial and non commercial projects.\nIf you have any questions feel free to ask me for more information.",
   "projects": {
-    "links": {
-      "description": "A simple responsive, static page for sharing my personal links.",
-      "modal": [
-        {
-          "name": "Introduction 1",
-          "content": "This is a simple responsive, static page for sharing my personal links. It was made with HTML, CSS and JavaScript. It is hosted on GitHub Pages and the source code is available on GitHub."
-        },
-        {
-          "name": "Introduction 2",
-          "content": "This is a simple responsive, static page for sharing my personal links. It was made with HTML, CSS and JavaScript. It is hosted on GitHub Pages and the source code is available on GitHub.",
-          "image": "/projects/links/links.webp"
-        },
-        {
-          "name": "Introduction 3",
-          "content": "This is a simple responsive, static page for sharing my personal links. It was made with HTML, CSS and JavaScript. It is hosted on GitHub Pages and the source code is available on GitHub."
-        }
-      ]
-    },
-    "calcapp": {
-      "description": "Calculator app made with Angular. This project was generated with Angular CLI version 11.1.1.",
-      "modal": [
-        {
-          "name": "Introduction",
-          "content": "This is a simple calculator app made with Angular. This project was generated with Angular CLI version 11.1.1."
-        },
-        {
-          "name": "Introduction",
-          "content": "This is a simple calculator app made with Angular. This project was generated with Angular CLI version 11.1.1."
-        },
-        {
-          "name": "Introduction",
-          "content": "This is a simple calculator app made with Angular. This project was generated with Angular CLI version 11.1.1."
-        }
-      ]
-    },
-    "calcapp2": {
-      "description": "Calculator app made with Angular. This project was generated with Angular CLI version 11.1.1.asdasd",
-      "modal": [
-        {
-          "name": "Introduction",
-          "content": "This is a simple calculator app made with Angular. This project was generated with Angular CLI version 11.1.1."
-        },
-        {
-          "name": "Introduction",
-          "content": "This is a simple calculator app made with Angular. This project was generated with Angular CLI version 11.1.1."
-        },
-        {
-          "name": "Introduction",
-          "content": "This is a simple calculator app made with Angular. This project was generated with Angular CLI version 11.1.1."
-        }
-      ]
-    }
+    "links": "A simple responsive, static page for sharing my personal links.",
+    "calcapp": "Calculator app made with Angular. This project was generated with Angular CLI version 11.1.1.",
+    "calcapp2": "Calculator app made with Angular. This project was generated with Angular CLI version 11.1.1.asdasd"
   }
 }

@@ -19,18 +19,6 @@ export interface ProjectProps {
 const {
   project: { id, name, languages, previewLink, githubLink, image, slug },
 } = Astro.props
-
-const projectContent = t<
-  {
-    name: string
-    content: string
-  }[]
->(`projects.${slug}.modal`, {
-  returnObjects: true,
-} as const) as Array<{
-  name: string
-  content: string
-}>
 ---
 
 <script>
@@ -59,50 +47,8 @@ const projectContent = t<
       ))
     }
   </div>
-  <p class="description">{t(`projects.${slug}.description`)}</p>
+  <p class="description">{t(`projects.${slug}`)}</p>
 </article>
-
-<dialog class="modal" id={`modal-${slug}`}>
-  <button class="button-close" id={`button-close-${slug}`}
-    ><Icon class="icon" name="eva:close-circle-outline" />
-  </button>
-  {
-    projectContent &&
-      projectContent.length > 0 &&
-      Array.apply(null, Array(projectContent.length))
-        .map(() => {})
-        .map((_, index) => (
-          <div class="modal-section">
-            <h3>{t(`projects.${slug}.modal.${index}.name`)}</h3>
-            <p>{t(`projects.${slug}.modal.${index}.content`)}</p>
-            {t([`projects.${slug}.modal.${index}.image`, '']) ? (
-              <img
-                src={t(`projects.${slug}.modal.${index}.image`)}
-                alt=""
-                srcset=""
-              />
-            ) : (
-              ''
-            )}
-          </div>
-        ))
-  }
-  <div class="modal-links">
-    <LinkButton
-      href={previewLink}
-      label="Preview"
-      iconLeft="eva:eye-outline"
-      target="_blank"
-    />
-    <LinkButton
-      href={githubLink}
-      label="Github repo"
-      theme="secondary"
-      iconLeft="eva:github-outline"
-      target="_blank"
-    />
-  </div>
-</dialog>
 
 <style>
   .card {

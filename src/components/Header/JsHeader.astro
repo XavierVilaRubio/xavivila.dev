@@ -2,9 +2,9 @@
 import { localizePath } from 'astro-i18next'
 import i18next from 'i18next'
 import Icon from 'astro-icon'
-
 import { t, setDefaultNamespace } from 'i18next'
 
+const { pathname } = Astro.url
 setDefaultNamespace('common')
 ---
 
@@ -60,7 +60,7 @@ setDefaultNamespace('common')
         <ul class="language-list">
           <li>
             <a
-              href="/"
+              href={localizePath(pathname, 'en')}
               hreflang="en"
               class={`language-link ${
                 i18next.resolvedLanguage === 'en' ? 'active' : ''
@@ -70,7 +70,7 @@ setDefaultNamespace('common')
           <li><p>|</p></li>
           <li>
             <a
-              href="/es"
+              href={localizePath(pathname, 'es')}
               hreflang="es"
               class={`language-link ${
                 i18next.resolvedLanguage === 'es' ? 'active' : ''

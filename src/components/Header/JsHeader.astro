@@ -3,6 +3,7 @@ import { localizePath } from 'astro-i18next'
 import i18next from 'i18next'
 import Icon from 'astro-icon'
 import { t, setDefaultNamespace } from 'i18next'
+import ThemeSwitch from './ThemeSwitch.astro'
 
 const { pathname } = Astro.url
 setDefaultNamespace('common')
@@ -12,14 +13,12 @@ setDefaultNamespace('common')
   const intersectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(({ target, isIntersecting }) => {
-        const navLink = document.querySelector(
-          `a[href='/#${target.id}'], a[href='/es/#${target.id}']`
-        )
+        const navLink = document.getElementById(`${target.id}-link`)
         navLink?.classList.toggle('active', isIntersecting)
       })
     },
     {
-      threshold: 0.5,
+      threshold: 0.6,
     }
   )
   const sections = document.querySelectorAll('section')
@@ -49,7 +48,10 @@ setDefaultNamespace('common')
         {
           ['work', 'about_me', 'contact'].map((key) => (
             <li class="links-list-item">
-              <a href={localizePath(`/#${key}`).slice(0, -1)}>
+              <a
+                href={localizePath(`/#${key}`).slice(0, -1)}
+                id={`${key}-link`}
+              >
                 {t(`navbar.${key}`)}
               </a>
             </li>
@@ -98,6 +100,7 @@ setDefaultNamespace('common')
             </a>
           </li>
         </ul>
+        <ThemeSwitch />
       </div>
     </nav>
   </div>
@@ -238,12 +241,6 @@ setDefaultNamespace('common')
       gap: 2rem;
     }
 
-    .links-list {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
     .menu-button {
       display: none;
     }
@@ -255,6 +252,14 @@ setDefaultNamespace('common')
     .icon {
       width: 1.15rem;
       height: 1.15rem;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .links-list {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 </style>

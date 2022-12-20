@@ -47,10 +47,6 @@ const { language, icon } = Astro.props
     position: relative;
   }
 
-  .language_card:hover::before {
-    opacity: 1;
-  }
-
   .language_card::before,
   .language_card::after {
     border-radius: inherit;
@@ -64,20 +60,26 @@ const { language, icon } = Astro.props
     width: 100%;
   }
 
-  .language_card::before {
-    background: radial-gradient(
-      300px circle at var(--mouse-x) var(--mouse-y),
-      rgba(var(--color-text-rgb), 0.1),
-      transparent 40%
-    );
-    z-index: 1;
-  }
-
   .language_card__icon {
     height: 1.5rem;
   }
   .language_card__name {
     font-size: 1rem;
     color: var(--color-text);
+  }
+
+  @media (hover: hover) {
+    .language_card:hover::before {
+      opacity: 1;
+    }
+
+    .language_card::before {
+      background: radial-gradient(
+        300px circle at var(--mouse-x) var(--mouse-y),
+        rgba(var(--color-text-rgb), 0.1),
+        transparent 40%
+      );
+      z-index: 1;
+    }
   }
 </style>

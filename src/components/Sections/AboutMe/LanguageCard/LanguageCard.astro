@@ -1,0 +1,83 @@
+---
+import Icon from 'astro-icon'
+
+export interface LanguageCardProps {
+  language: string
+  icon: string
+}
+
+const { language, icon } = Astro.props
+---
+
+<script>
+  const languageCards = document.querySelectorAll('.language_card')
+  console.log(languageCards)
+  languageCards.forEach((languageCard) => {
+    console.log(languageCard)
+    languageCard.addEventListener('mousemove', (e: any) => {
+      if (e.currentTarget) {
+        const rect = (e.currentTarget as Element).getBoundingClientRect(),
+          x = e.clientX - rect.left,
+          y = e.clientY - rect.top
+        e.currentTarget.style.setProperty('--mouse-x', `${x}px`)
+        e.currentTarget.style.setProperty('--mouse-y', `${y}px`)
+      }
+    })
+  })
+</script>
+
+<div class="language_card">
+  <Icon name={icon} class="language_card__icon" /><p
+    class="language_card__name"
+  >
+    {language}
+  </p>
+</div>
+
+<style>
+  .language_card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: rgba(var(--color-text-rgb), 0.01);
+    border: 1px solid rgba(var(--color-text-rgb), 0.1);
+    /* box-shadow: rgb(149 157 165 / 30%) 0px 8px 24px; */
+    position: relative;
+  }
+
+  .language_card:hover::before {
+    opacity: 1;
+  }
+
+  .language_card::before,
+  .language_card::after {
+    border-radius: inherit;
+    content: '';
+    height: 100%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    transition: opacity 500ms;
+    width: 100%;
+  }
+
+  .language_card::before {
+    background: radial-gradient(
+      300px circle at var(--mouse-x) var(--mouse-y),
+      rgba(var(--color-text-rgb), 0.1),
+      transparent 40%
+    );
+    z-index: 1;
+  }
+
+  .language_card__icon {
+    height: 1.5rem;
+  }
+  .language_card__name {
+    font-size: 1rem;
+    color: var(--color-text);
+  }
+</style>

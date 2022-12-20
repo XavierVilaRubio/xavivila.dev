@@ -1,12 +1,30 @@
 ---
 import Section from '../../Common/Section/Section.astro'
 import { t } from 'i18next'
+import LanguageCard from './LanguageCard/LanguageCard.astro'
 ---
 
 <Section id="about_me">
-  <!--  -->
+  <!-- Stack i algo més? -->
+  <div class="stack">
+    <h3>Stack</h3>
+    <div class="stack__languages">
+      <LanguageCard language="HTML" icon="teenyicons:html5-solid" />
+      <LanguageCard language="CSS" icon="teenyicons:css3-solid" />
+      <LanguageCard language="JavaScript" icon="teenyicons:javascript-solid" />
+      <LanguageCard language="TypeScript" icon="teenyicons:typescript-solid" />
+      <LanguageCard language="React" icon="teenyicons:react-solid" />
+      <LanguageCard language="NextJS" icon="teenyicons:nextjs-solid" />
+      <LanguageCard language="TailwindCSS" icon="teenyicons:tailwind-solid" />
+    </div>
+  </div>
 </Section>
 
 <style>
-
+  .stack__languages {
+    margin-block-start: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
 </style>

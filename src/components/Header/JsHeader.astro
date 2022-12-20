@@ -31,6 +31,11 @@ setDefaultNamespace('common')
     ?.addEventListener('click', () =>
       document.getElementById('nav-links')?.classList.toggle('show')
     )
+  document.querySelectorAll('.nav-link').forEach((link) => {
+    link.addEventListener('click', () =>
+      document.getElementById('nav-links')?.classList.remove('show')
+    )
+  })
 </script>
 
 <header>
@@ -51,6 +56,7 @@ setDefaultNamespace('common')
               <a
                 href={localizePath(`/#${key}`).slice(0, -1)}
                 id={`${key}-link`}
+                class="nav-link"
               >
                 {t(`navbar.${key}`)}
               </a>

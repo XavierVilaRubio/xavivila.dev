@@ -1,13 +1,4 @@
-:root {
-  /* ACCENT */
-  --color-accent-hex: #00afaf;
-  --color-accent-rgb: 0, 175, 175;
-  --color-accent: rgb(var(--color-accent-rgb));
-  /* ACCENT DARK */
-  --color-accent-dark-hex: #007c7c;
-  --color-accent-dark-rgb: 0, 124, 124;
-  --color-accent-dark: rgb(var(--color-accent-dark-rgb));
-
+[data-theme='light'] {
   /* PRIMARY */
   --color-primary-hex: #1c2c4e;
   --color-primary-rgb: 28, 44, 78;
@@ -17,6 +8,11 @@
   --color-secondary-hex: #fef9fb;
   --color-secondary-rgb: 254, 249, 251;
   --color-secondary: rgb(var(--color-secondary-rgb));
+
+  /* ACCENT */
+  --color-accent-hex: #007c7c;
+  --color-accent-rgb: 0, 124, 124;
+  --color-accent: rgb(var(--color-accent-rgb));
 
   /* BACKGROUND */
   --color-background-rgb: var(--color-secondary-rgb);
@@ -44,47 +40,44 @@
   --button-secondary-hover-border: var(--color-secondary);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-accent-rgb: var(--color-accent-dark-rgb);
-  }
-}
+[data-theme='dark'] {
+  /* PRIMARY */
+  --color-primary-hex: #1c2c4e;
+  --color-primary-rgb: 28, 44, 78;
+  --color-primary: rgb(var(--color-primary-rgb));
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* PRIMARY */
-    --color-primary-hex: #1c2c4e;
-    --color-primary-rgb: 28, 44, 78;
-    --color-primary: rgb(var(--color-primary-rgb));
+  /* SECONDARY */
+  --color-secondary-hex: #f2f2f4;
+  --color-secondary-rgb: 242, 242, 244;
+  --color-secondary: rgb(var(--color-secondary-rgb));
 
-    /* SECONDARY */
-    --color-secondary-hex: #f2f2f4;
-    --color-secondary-rgb: 242, 242, 244;
-    --color-secondary: rgb(var(--color-secondary-rgb));
+  /* ACCENT */
+  --color-accent-hex: #00afaf;
+  --color-accent-rgb: 0, 175, 175;
+  --color-accent: rgb(var(--color-accent-rgb));
 
-    /* BACKGROUND */
-    --color-background-rgb: var(--color-primary-rgb);
-    --color-background: var(--color-primary);
+  /* BACKGROUND */
+  --color-background-rgb: var(--color-primary-rgb);
+  --color-background: var(--color-primary);
 
-    /* TEXT */
-    --color-text-rgb: var(--color-secondary-rgb);
-    --color-text: var(--color-secondary);
+  /* TEXT */
+  --color-text-rgb: var(--color-secondary-rgb);
+  --color-text: var(--color-secondary);
 
-    /* BUTTONS */
-    /* PRIMARY */
-    --button-primary-text: var(--color-primary);
-    --button-primary-background: var(--color-secondary);
-    --button-primary-border: var(--color-primary);
-    --button-primary-hover-text: var(--color-secondary);
-    --button-primary-hover-background: var(--color-primary);
-    --button-primary-hover-border: var(--color-secondary);
+  /* BUTTONS */
+  /* PRIMARY */
+  --button-primary-text: var(--color-primary);
+  --button-primary-background: var(--color-secondary);
+  --button-primary-border: var(--color-primary);
+  --button-primary-hover-text: var(--color-secondary);
+  --button-primary-hover-background: var(--color-primary);
+  --button-primary-hover-border: var(--color-secondary);
 
-    /* SECONDARY */
-    --button-secondary-text: var(--color-secondary);
-    --button-secondary-background: var(--color-primary);
-    --button-secondary-border: var(--color-secondary);
-    --button-secondary-hover-text: var(--color-primary);
-    --button-secondary-hover-background: var(--color-secondary);
-    --button-secondary-hover-border: var(--color-primary);
-  }
+  /* SECONDARY */
+  --button-secondary-text: var(--color-secondary);
+  --button-secondary-background: var(--color-primary);
+  --button-secondary-border: var(--color-secondary);
+  --button-secondary-hover-text: var(--color-primary);
+  --button-secondary-hover-background: var(--color-secondary);
+  --button-secondary-hover-border: var(--color-primary);
 }

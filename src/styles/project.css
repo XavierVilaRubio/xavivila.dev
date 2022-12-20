@@ -41,3 +41,8 @@ article.content img {
   max-width: 100%;
   max-height: calc(50vh + 180px);
 }
+
+article.content a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-text);
+}

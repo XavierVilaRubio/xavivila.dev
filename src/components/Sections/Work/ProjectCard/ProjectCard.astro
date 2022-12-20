@@ -1,8 +1,6 @@
 ---
 import { t, setDefaultNamespace } from 'i18next'
 import { localizePath } from 'astro-i18next'
-import LinkButton from '../../../Common/LinkButton/LinkButton.astro'
-import Icon from 'astro-icon'
 import LanguageTag, { LanguageTagProps } from './LanguageTag.astro'
 setDefaultNamespace('work')
 
@@ -10,14 +8,12 @@ export interface ProjectProps {
   id: number
   name: string
   languages: Array<string>
-  previewLink: string
-  githubLink: string
   image: string
   slug: string
 }
 
 const {
-  project: { id, name, languages, previewLink, githubLink, image, slug },
+  project: { id, name, languages, image, slug },
 } = Astro.props
 ---
 
@@ -61,28 +57,12 @@ const {
     position: relative;
   }
 
-  .card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    /* box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px; */
-    transition: opacity 0.2s ease-in-out;
-  }
-
-  .card:hover::after {
-    opacity: 1;
-  }
-
   .image {
     order: -1;
     /* aspect-ratio: 16/9; */
     max-width: 100%;
     border-radius: 0.5rem;
-    max-height: 80%;
+    /* max-height: 80%; */
     box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
   }
 
@@ -111,19 +91,6 @@ const {
     color: rgba(var(--color-text-rgb), 0.8);
   }
 
-  .links {
-    margin-block-start: 1rem;
-    display: flex;
-    gap: 1rem;
-    font-size: 0.875rem;
-  }
-
-  @media (min-width: 768px) {
-    .links {
-      font-size: 1rem;
-    }
-  }
-
   @media (prefers-reduced-motion: no-preference) {
     .card {
       opacity: 0;
@@ -135,19 +102,6 @@ const {
     .show {
       opacity: 1;
       transform: translateY(0);
-    }
-  }
-
-  @media (hover: hover) {
-    .links {
-      opacity: 0;
-      transform: translateY(50%);
-      transition: all 0.3s ease-in-out;
-    }
-
-    .card:hover .links {
-      transform: translateY(0);
-      opacity: 1;
     }
   }
 </style>

@@ -1,12 +1,25 @@
 ---
 import Section from '../../Common/Section/Section.astro'
 import { t } from 'i18next'
+import LinkButton from '../../Common/LinkButton/LinkButton.astro'
 ---
 
 <Section id="contact">
-  <!--  -->
+  {t('content')}
+  <LinkButton
+    label={t('email-button')}
+    href="mailto:xavi@xavivila.dev"
+    target="_blank"
+    customClass="email-button"
+    iconLeft="eva:email-outline"
+  />
 </Section>
 
-<style>
-
+<style is:global>
+  .email-button {
+    width: fit-content;
+    margin-inline: auto;
+    margin-block-start: 3rem;
+    /* padding: 1.5rem 1.75rem; */
+  }
 </style>

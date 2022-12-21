@@ -1,7 +1,7 @@
 article.content {
   width: min(90%, 75rem);
   margin-inline: auto;
-  margin-block-end: 2rem;
+  margin-block: 5rem 2rem;
 }
 
 article.content h1 {

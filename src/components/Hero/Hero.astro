@@ -1,7 +1,7 @@
 ---
-import LinkButton from '../Common/LinkButton/LinkButton.astro'
 import { Trans } from 'astro-i18next/components'
 import { t, setDefaultNamespace } from 'i18next'
+import ScrollDownLink from './ScrollDownLink.astro'
 
 setDefaultNamespace('hero')
 ---
@@ -32,15 +32,8 @@ setDefaultNamespace('hero')
     <p class="subheadline">
       {t('subHeadline')}
     </p>
-    <div class="links">
-      <LinkButton href="#contact" label={t('contactMeButton')} />
-      <LinkButton
-        href="#work"
-        label={t('checkMyWorkButton')}
-        theme="secondary"
-      />
-    </div>
   </div>
+  <ScrollDownLink />
   <div id="dot" class="dot" style="top: 5%; left: 25%"></div>
 </section>
 
@@ -66,7 +59,7 @@ setDefaultNamespace('hero')
   .text {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
     max-width: 40rem;
     width: 100%;
   }

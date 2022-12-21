@@ -1,0 +1,40 @@
+---
+import Icon from 'astro-icon'
+---
+
+<a href="/#work" class="link-scroll">
+  <Icon name="eva:chevron-down-outline" class="link-scroll__icon" />
+</a>
+
+<style>
+  .link-scroll {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(-50%);
+  }
+
+  .link-scroll__icon {
+    --size: 3rem;
+    height: var(--size);
+    width: var(--size);
+    animation: scroll 2s ease-in forwards infinite;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateY(-10%);
+    }
+    25% {
+      transform: translateY(10%);
+    }
+    50% {
+      transform: translateY(-10%);
+    }
+    75% {
+      transform: translateY(10%);
+    }
+    100% {
+      transform: translateY(-10%);
+    }
+  }
+</style>

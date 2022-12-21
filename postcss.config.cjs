@@ -1,3 +1,7 @@
 module.exports = {
-  plugins: [require('postcss-import'), require('postcss-nesting')],
+  plugins: [
+    require('postcss-import'),
+    require('postcss-nesting'),
+    require('postcss-custom-media'),
+  ],
 }

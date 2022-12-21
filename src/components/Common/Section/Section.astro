@@ -24,14 +24,21 @@ const descriptionTextAlign =
 </section>
 
 <style is:global define:vars={{ descriptionTextAlign }}>
+  @custom-media --md-screen (min-width: 768px);
+
   .section {
+    --section-spacing: 4rem;
     min-height: 30vh;
     width: min(85%, 75rem);
     margin-inline: auto;
-    padding-block: 8rem;
+    padding-block: var(--section-spacing);
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (--md-screen) {
+      --section-spacing: 8rem;
+    }
   }
 
   h2.section__title {
@@ -47,6 +54,11 @@ const descriptionTextAlign =
   .section__description {
     margin-block-start: 1.5rem;
     text-align: center;
+
+    @media (--md-screen) {
+      margin-block-start: 1.5rem;
+      white-space: pre-wrap;
+    }
   }
 
   .section__content {
@@ -57,12 +69,5 @@ const descriptionTextAlign =
 
   .section__content > a:not(.btn) {
     text-decoration: underline;
-  }
-
-  @media (min-width: 760px) {
-    .section__description {
-      margin-block-start: 1.5rem;
-      white-space: pre-wrap;
-    }
   }
 </style>

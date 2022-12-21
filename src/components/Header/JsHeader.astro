@@ -113,9 +113,11 @@ setDefaultNamespace('common')
 </header>
 
 <style>
+  @custom-media --md-screen (min-width: 768px);
+  @custom-media --lg-screen (min-width: 1200px);
+
   header {
     position: fixed;
-    position: sticky;
     top: 0;
     width: 100%;
     backdrop-filter: blur(10px);
@@ -134,6 +136,10 @@ setDefaultNamespace('common')
     display: flex;
     flex-direction: column;
     padding-inline: 1rem;
+
+    @media (--md-screen) {
+      padding-inline: 2rem;
+    }
   }
 
   .logo-and-menu {
@@ -161,6 +167,10 @@ setDefaultNamespace('common')
     align-items: center;
     gap: 1.5rem;
     font-weight: 700;
+
+    @media (--md-screen) {
+      display: contents;
+    }
   }
 
   .links-list,
@@ -171,8 +181,32 @@ setDefaultNamespace('common')
     gap: 0.5rem;
   }
 
+  .links-list {
+    @media (--md-screen) {
+      gap: 4rem;
+    }
+    @media (--lg-screen) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
   .language-and-social-lists {
     gap: 1rem;
+    @media (--md-screen) {
+      gap: 2rem;
+    }
+  }
+
+  .wrapper,
+  .links-list,
+  .language-and-social-lists {
+    @media (--md-screen) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   ul {
@@ -197,8 +231,13 @@ setDefaultNamespace('common')
   }
 
   .icon {
-    width: 20px;
-    height: 20px;
+    --size: 1.25rem;
+    width: var(--size);
+    height: var(--size);
+
+    @media (--md-screen) {
+      --size: 1.15rem;
+    }
   }
   .active,
   .links-list-item:hover > a,
@@ -226,46 +265,9 @@ setDefaultNamespace('common')
     font-size: 0.85em;
   }
 
-  @media (min-width: 768px) {
-    .wrapper {
-      padding-inline: 2rem;
-    }
-
-    .wrapper,
-    .links-list,
-    .language-and-social-lists {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .links-list {
-      gap: 4rem;
-    }
-
-    .language-and-social-lists {
-      gap: 2rem;
-    }
-
-    .menu-button {
+  .menu-button {
+    @media (--md-screen) {
       display: none;
-    }
-
-    .nav-links {
-      display: contents;
-    }
-
-    .icon {
-      width: 1.15rem;
-      height: 1.15rem;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .links-list {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
     }
   }
 </style>

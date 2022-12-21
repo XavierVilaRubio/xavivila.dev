@@ -14,7 +14,7 @@ setDefaultNamespace('hero')
     const height = e.view?.innerHeight
 
     const dot = document.getElementById('dot')
-    if (dot && height && width) {
+    if (window.matchMedia('(hover: hover)') && dot && height && width) {
       dot.style.top = `${height - mouseY}px`
       dot.style.left = `${width - mouseX}px`
     }
@@ -34,10 +34,13 @@ setDefaultNamespace('hero')
     </p>
   </div>
   <ScrollDownLink />
-  <div id="dot" class="dot" style="top: 5%; left: 25%"></div>
+  <div id="dot" class="dot" style="top: 15%; left: 15%"></div>
 </section>
 
 <style>
+  @custom-media --md-screen (min-width: 768px);
+  @custom-media --lg-screen (min-width: 1200px);
+
   section {
     display: flex;
     flex-direction: column;
@@ -49,11 +52,25 @@ setDefaultNamespace('hero')
     margin-inline: auto;
     min-height: 90vh;
     padding-inline: 1rem;
+
+    @media (--md-screen) {
+      flex-direction: row;
+      text-align: start;
+      gap: 2rem;
+    }
+
+    @media (--lg-screen) {
+      gap: 4rem;
+    }
   }
 
   img {
     max-width: 23rem;
     width: 60%;
+
+    @media (--md-screen) {
+      width: 40%;
+    }
   }
 
   .text {
@@ -62,6 +79,10 @@ setDefaultNamespace('hero')
     gap: 2rem;
     max-width: 40rem;
     width: 100%;
+
+    @media (--md-screen) {
+      width: fit-content;
+    }
   }
 
   h1 {
@@ -72,6 +93,10 @@ setDefaultNamespace('hero')
       3rem
     );
     font-weight: 900;
+
+    @media (--md-screen) {
+      width: fit-content;
+    }
   }
 
   p {
@@ -83,6 +108,11 @@ setDefaultNamespace('hero')
     );
     line-height: 1.15rem;
     color: var(--color-accent);
+
+    @media (--md-screen) {
+      max-width: 90%;
+      line-height: 1.25rem;
+    }
   }
 
   .links {
@@ -91,58 +121,20 @@ setDefaultNamespace('hero')
     flex-direction: row;
     justify-content: space-between;
     gap: 1rem;
+
+    @media (--md-screen) {
+      max-width: 350px;
+    }
   }
 
   .dot {
-    display: none;
-  }
-
-  @media (min-width: 760px) {
-    section {
-      flex-direction: row;
-      text-align: start;
-      gap: 1rem;
-    }
-
-    img {
-      width: 40%;
-    }
-
-    .text {
-      width: fit-content;
-    }
-
-    h1 {
-      width: fit-content;
-    }
-
-    p {
-      max-width: 90%;
-      line-height: 1.25rem;
-    }
-
-    .links {
-      max-width: 350px;
-    }
-
-    .dot {
-      display: block;
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      /* background-color: blue; */
-      background-color: var(--color-accent);
-      filter: blur(50px);
-      /* transition: all 0.2s; */
-      /* transition-timing-function: cubic-bezier(0.02, 0.96, 0.87, 0.12); */
-      z-index: -1;
-    }
-  }
-
-  @media (min-width: 992px) {
-    section {
-      gap: 3rem;
-    }
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    filter: blur(50px);
+    z-index: -1;
   }
 </style>

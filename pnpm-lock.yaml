@@ -7,6 +7,7 @@ specifiers:
   astro-icon: ^0.7.3
   i18next-fs-backend: ^1.1.5
   postcss: ^8.4.18
+  postcss-custom-media: ^9.0.1
   postcss-import: ^15.0.0
   postcss-nesting: ^10.2.0
 
@@ -19,6 +20,7 @@ dependencies:
 
 devDependencies:
   postcss: 8.4.18
+  postcss-custom-media: 9.0.1_postcss@8.4.18
   postcss-import: 15.0.0_postcss@8.4.18
   postcss-nesting: 10.2.0_postcss@8.4.18
 
@@ -365,6 +367,31 @@ packages:
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
     dev: false
+
+  /@csstools/css-parser-algorithms/1.0.0_yc2lywpo4a5sk4h3mmwqkmetvu:
+    resolution: {integrity: sha512-lPphY34yfV15tEXiz/SYaU8hwqAhbAwqiTExv5tOfc7QZxT70VVYrsiPBaX1osdWZFowrDEAhHe4H3JnyzbjhA==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      '@csstools/css-tokenizer': ^1.0.0
+    dependencies:
+      '@csstools/css-tokenizer': 1.0.0
+    dev: true
+
+  /@csstools/css-tokenizer/1.0.0:
+    resolution: {integrity: sha512-xdFjdQ+zqqkOsmee+kYRieZD9Cqh4hr01YBQ2/8NtTkMMxbtRX18MC50LX6cMrtaLryqmIdZHN9e16/l0QqnQw==}
+    engines: {node: ^14 || ^16 || >=18}
+    dev: true
+
+  /@csstools/media-query-list-parser/1.0.0_oycmb73qbeg4xspzoh5ywrqikm:
+    resolution: {integrity: sha512-HsTj5ejI8NKKZ4IEd6kK2kQZA/JmIVlUV8+XvO/YS9ntrlYPnbmFT3rkqtbxOVfEafblYCNOpeNw1c+fKGkAqw==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      '@csstools/css-parser-algorithms': ^1.0.0
+      '@csstools/css-tokenizer': ^1.0.0
+    dependencies:
+      '@csstools/css-parser-algorithms': 1.0.0_yc2lywpo4a5sk4h3mmwqkmetvu
+      '@csstools/css-tokenizer': 1.0.0
+    dev: true
 
   /@csstools/selector-specificity/2.0.2_jdid4b2ttimdpkce6kfd33bsxa:
     resolution: {integrity: sha512-IkpVW/ehM1hWKln4fCA3NzJU8KwD+kIOvPZA4cqxoJHtE21CCzjyp+Kxbu0i5I4tBNOlXPL9mjwnWlL0VEG4Fg==}
@@ -2801,6 +2828,18 @@ packages:
     dependencies:
       find-up: 4.1.0
     dev: false
+
+  /postcss-custom-media/9.0.1_postcss@8.4.18:
+    resolution: {integrity: sha512-CimS72gZZ0V4WPFg7t7EqFVLxJ0mqwAJSsuk+LNHSo9ApC7d/SuOr65sKrUY/D8locOh+3s4yO7IdqQ9cRSR7Q==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      postcss: ^8.4
+    dependencies:
+      '@csstools/css-parser-algorithms': 1.0.0_yc2lywpo4a5sk4h3mmwqkmetvu
+      '@csstools/css-tokenizer': 1.0.0
+      '@csstools/media-query-list-parser': 1.0.0_oycmb73qbeg4xspzoh5ywrqikm
+      postcss: 8.4.18
+    dev: true
 
   /postcss-import/15.0.0_postcss@8.4.18:
     resolution: {integrity: sha512-Y20shPQ07RitgBGv2zvkEAu9bqvrD77C9axhj/aA1BQj4czape2MdClCExvB27EwYEJdGgKZBpKanb0t1rK2Kg==}

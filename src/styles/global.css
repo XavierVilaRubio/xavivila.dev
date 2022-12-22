@@ -1,7 +1,6 @@
 @import 'reset.css';
 @import 'variables.css';
 @import 'scrollbar.css';
-@import 'https://unpkg.com/open-props/easings.min.css';
 
 :root {
   scroll-behavior: smooth;

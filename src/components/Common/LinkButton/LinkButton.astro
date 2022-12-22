@@ -4,7 +4,7 @@ import Icon from 'astro-icon'
 interface Props {
   label: string
   href: string
-  theme?: string
+  intent?: 'primary' | 'secondary'
   iconLeft?: string
   target?: string
   ariaLabel?: string
@@ -13,7 +13,7 @@ interface Props {
 const {
   label,
   href,
-  theme = 'primary',
+  intent = 'primary',
   iconLeft,
   target = '_self',
   ariaLabel = label,
@@ -23,7 +23,7 @@ const {
 
 <a
   href={href ? href : '#'}
-  class={`btn btn--${theme} ${customClass}`}
+  class={`btn btn--${intent} ${customClass}`}
   target={target}
   aria-label={ariaLabel}
 >
@@ -42,28 +42,30 @@ const {
     font-weight: 700;
     transition: all 0.2s ease-in-out;
     gap: 0.5rem;
-  }
 
-  .btn--primary {
-    color: var(--button-primary-text);
-    background-color: var(--button-primary-background);
-    border: 1px solid var(--button-primary-border);
-  }
-  .btn--primary:hover {
-    color: var(--button-primary-hover-text);
-    background-color: var(--button-primary-hover-background);
-    border: 1px solid var(--button-primary-hover-border);
-  }
+    &.btn--primary {
+      color: var(--button-primary-text);
+      background-color: var(--button-primary-background);
+      border: 1px solid var(--button-primary-border);
 
-  .btn--secondary {
-    color: var(--button-secondary-text);
-    background-color: var(--button-secondary-background);
-    border: 1px solid var(--button-secondary-border);
-  }
-  .btn--secondary:hover {
-    color: var(--button-secondary-hover-text);
-    background-color: var(--button-secondary-hover-background);
-    border: 1px solid var(--button-secondary-hover-border);
+      &:hover {
+        color: var(--button-primary-hover-text);
+        background-color: var(--button-primary-hover-background);
+        border: 1px solid var(--button-primary-hover-border);
+      }
+    }
+
+    &.btn--secondary {
+      color: var(--button-secondary-text);
+      background-color: var(--button-secondary-background);
+      border: 1px solid var(--button-secondary-border);
+
+      &:hover {
+        color: var(--button-secondary-hover-text);
+        background-color: var(--button-secondary-hover-background);
+        border: 1px solid var(--button-secondary-hover-border);
+      }
+    }
   }
 
   .btn__icon {

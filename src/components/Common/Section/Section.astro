@@ -1,23 +1,19 @@
 ---
 interface Props {
   id: string
+  description?: boolean
 }
-const { id } = Astro.props
+const { id, description = true } = Astro.props
 
 import { t, setDefaultNamespace } from 'i18next'
 
 setDefaultNamespace(id)
-const descriptionTextAlign =
-  t('description') != 'description' ? 'start' : 'center'
+const descriptionTextAlign = description ? 'start' : 'center'
 ---
 
 <section class="section" id={id}>
   <h2 class="section__title">{t('title')}</h2>
-  {
-    t('description') != 'description' && (
-      <p class="section__description">{t('description')}</p>
-    )
-  }
+  {description ? <p class="section__description">{t('description')}</p> : null}
   <div class="section__content">
     <slot />
   </div>

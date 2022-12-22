@@ -1,0 +1,36 @@
+---
+import JsHeader from '../components/Header/JsHeader.astro'
+import '../styles/global.css'
+import i18next from 'i18next'
+import { HeadHrefLangs } from 'astro-i18next/components'
+import '@fontsource/lato'
+import '@fontsource/lato/700.css'
+import '@fontsource/lato/900.css'
+
+export interface Props {
+  title: string
+  description: string
+}
+
+const { title, description } = Astro.props
+---
+
+<html lang={i18next.resolvedLanguage}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <HeadHrefLangs />
+    <script>
+      import '../scripts/theme-toggle'
+    </script>
+  </head>
+
+  <body>
+    <JsHeader />
+    <slot />
+  </body>
+</html>

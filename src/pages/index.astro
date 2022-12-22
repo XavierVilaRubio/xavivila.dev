@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import { changeLanguage } from "i18next";
 import Hero from "../components/Hero/Hero.astro";
 import Work from "../components/Sections/Work/Work.astro";
@@ -9,9 +9,9 @@ import Contact from "../components/Sections/Contact/Contact.astro";
 changeLanguage("en");
 ---
 
-<Layout title="Xavier Vila Rubio">
+<BaseLayout title="Xavier Vila Rubio" description="Hi, I'm Xavi and I'm a Frontend Developer.">
   <Hero />
   <Work />
   <AboutMe />
   <Contact />
-</Layout>
+</BaseLayout>

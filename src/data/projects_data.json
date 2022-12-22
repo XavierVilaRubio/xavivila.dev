@@ -6,7 +6,7 @@
       "languages": ["JavaScript", "React", "NextJS", "TailwindCSS"],
       "previewLink": "https://links.xavivila.dev",
       "githubLink": "https://github.com/XavierVilaRubio/links",
-      "image": "/links.webp",
+      "image": "/links_sm.webp",
       "slug": "links"
     },
     {
@@ -15,7 +15,7 @@
       "languages": ["Java", "Spring", "HTML&CSS", "Angular", "JavaScript"],
       "previewLink": "",
       "githubLink": "",
-      "image": "/dashboard.webp",
+      "image": "/dashboard_sm.webp",
       "slug": "calcapp"
     },
     {
@@ -24,7 +24,7 @@
       "languages": ["Java", "Spring", "HTML&CSS", "Angular", "JavaScript"],
       "previewLink": "",
       "githubLink": "",
-      "image": "/dashboard.webp",
+      "image": "/dashboard_sm.webp",
       "slug": "calcapp2"
     }
   ]

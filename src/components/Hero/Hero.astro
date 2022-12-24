@@ -14,9 +14,9 @@ setDefaultNamespace('hero')
     const height = e.view?.innerHeight
 
     const dot = document.getElementById('dot')
-    if (window.matchMedia('(hover: hover)') && dot && height && width) {
-      dot.style.top = `${height - mouseY}px`
-      dot.style.left = `${width - mouseX}px`
+    if (window.matchMedia('(hover: hover)').matches && dot && height && width) {
+      dot.style.top = `${height - mouseY - dot.clientHeight}px`
+      dot.style.left = `${width - mouseX - dot.clientWidth}px`
     }
   })
 </script>

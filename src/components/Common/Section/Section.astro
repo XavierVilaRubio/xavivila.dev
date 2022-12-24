@@ -43,8 +43,12 @@ const descriptionTextAlign = description ? 'start' : 'center'
   }
 
   h3 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 700;
+
+    @media (--md-screen) {
+      font-size: 2rem;
+    }
   }
 
   .section__description {

@@ -35,8 +35,11 @@ const { language, icon } = Astro.props
 </div>
 
 <style>
+  @custom-media --md-screen (min-width: 768px);
+
   .language_card {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 1rem;
     padding: 1.5rem;
@@ -45,6 +48,10 @@ const { language, icon } = Astro.props
     border: 1px solid rgba(var(--color-text-rgb), 0.1);
     /* box-shadow: rgb(149 157 165 / 30%) 0px 8px 24px; */
     position: relative;
+
+    @media (--md-screen) {
+      flex-direction: row;
+    }
   }
 
   .language_card::before,

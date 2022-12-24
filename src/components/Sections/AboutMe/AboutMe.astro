@@ -6,25 +6,82 @@ import LanguageCard from './LanguageCard/LanguageCard.astro'
 
 <Section id="about_me">
   <!-- Stack i algo més? -->
-  <div class="stack">
-    <h3>Stack</h3>
-    <div class="stack__languages">
-      <LanguageCard language="HTML" icon="teenyicons:html5-solid" />
-      <LanguageCard language="CSS" icon="teenyicons:css3-solid" />
-      <LanguageCard language="JavaScript" icon="teenyicons:javascript-solid" />
-      <LanguageCard language="TypeScript" icon="teenyicons:typescript-solid" />
-      <LanguageCard language="React" icon="teenyicons:react-solid" />
-      <LanguageCard language="NextJS" icon="teenyicons:nextjs-solid" />
-      <LanguageCard language="TailwindCSS" icon="teenyicons:tailwind-solid" />
-    </div>
+  <h3>Stack</h3>
+  <div class="stack__languages">
+    <LanguageCard language="HTML" icon="teenyicons:html5-solid" />
+    <LanguageCard language="CSS" icon="teenyicons:css3-solid" />
+    <LanguageCard language="JavaScript" icon="teenyicons:javascript-solid" />
+    <LanguageCard language="TypeScript" icon="teenyicons:typescript-solid" />
+    <LanguageCard language="React" icon="teenyicons:react-solid" />
+    <LanguageCard language="NextJS" icon="teenyicons:nextjs-solid" />
+    <LanguageCard language="TailwindCSS" icon="teenyicons:tailwind-solid" />
+  </div>
+  <h3>Employment History</h3>
+  <div class="employment_card">
+    <h2>eCommerce Developer at Trilogi - The eCommerce Agency, Igualada</h2>
+    <p class="dates">September 2021 - Present</p>
+    <ul>
+      <li>Implemented tailored web designs from Figma to HTML, CSS and JS.</li>
+      <li>Worked with PHP template engines such as Twig.</li>
+      <li>
+        Helped to achieve nice User Experiences translating the designs hand by
+        hand with the designers.
+      </li>
+    </ul>
+  </div>
+  <h3>Education</h3>
+  <div class="employment_card">
+    <h2>
+      Bachelor's degree in Digital Interaction and Computing Techniques,
+      Universitat de Lleida
+    </h2>
+    <p class="dates">September 2019 - June 2022</p>
+    <p>Graduated with High Honors.</p>
   </div>
 </Section>
 
 <style>
   .stack__languages {
-    margin-block-start: 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1rem;
+  }
+
+  h3 {
+    margin-block: 3rem 1.25rem;
+  }
+
+  h3:first-of-type {
+    margin-block-start: 0;
+  }
+
+  .employment_card {
+    padding-inline: 1rem;
+
+    & h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    & .dates {
+      color: gray;
+      font-size: 0.9rem;
+      margin-block: 0.75rem;
+    }
+
+    & p:not(.dates) {
+      margin-block: 0.4rem;
+      font-size: 1.1rem;
+    }
+
+    & ul {
+      list-style: disc;
+      padding-inline: 2.5rem;
+
+      & li {
+        margin-block: 0.4rem;
+        font-size: 1.1rem;
+      }
+    }
   }
 </style>

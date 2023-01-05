@@ -24,6 +24,16 @@ const { title, description } = Astro.props
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#fef9fb"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#1c2c4e"
+    />
     <title>{title}</title>
     <HeadHrefLangs />
     <script>

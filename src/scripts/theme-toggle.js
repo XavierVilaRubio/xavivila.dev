@@ -47,3 +47,12 @@ window
     theme.value = isDark ? 'dark' : 'light'
     setPreference()
   })
+
+document
+  .querySelector('meta[name=theme-color]')
+  .setAttribute(
+    'content',
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? '#1c2c4e'
+      : '#fef9fb'
+  )

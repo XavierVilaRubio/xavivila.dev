@@ -25,9 +25,7 @@ const reflectPreference = () => {
     .querySelector('meta[name=theme-color]')
     .setAttribute(
       'content',
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? '#1c2c4e'
-        : '#fef9fb'
+      getColorPreference() === 'dark' ? '#1c2c4e' : '#fef9fb'
     )
 
   document.firstElementChild?.setAttribute('data-theme', theme.value)

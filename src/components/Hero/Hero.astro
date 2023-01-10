@@ -38,6 +38,8 @@ setDefaultNamespace('hero')
 </section>
 
 <style>
+  /* Fluid typo calculator: https://royalfig.github.io/fluid-typography-calculator/ */
+
   @custom-media --md-screen (min-width: 768px);
   @custom-media --lg-screen (min-width: 1200px);
 
@@ -82,18 +84,27 @@ setDefaultNamespace('hero')
     max-width: 40rem;
     width: 100%;
 
+    & span {
+      font-size: 1.6rem;
+      font-size: clamp(
+        1.6rem,
+        1.4200000000000002rem + 0.8999999999999999vw,
+        2.5rem
+      );
+    }
+
     @media (--md-screen) {
       width: fit-content;
     }
   }
 
   h1 {
-    font-size: 1.6rem;
-    font-size: clamp(
-      1.6rem,
-      1.1699346405228759rem + 1.8300653594771243vw,
-      3rem
-    );
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    font-size: 2.5rem;
+    font-size: clamp(2.5rem, 2.4rem + 0.5vw, 3rem);
     font-weight: 900;
 
     @media (--md-screen) {

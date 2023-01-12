@@ -7,10 +7,15 @@ import Icon from 'astro-icon'
 </a>
 
 <style>
+  @custom-media --md-screen (min-width: 768px);
+
   .link-scroll {
     position: absolute;
-    bottom: 0;
-    transform: translateY(-50%);
+    bottom: 0.5rem;
+
+    @media (--md-screen) {
+      transform: translateY(-50%);
+    }
   }
 
   .link-scroll__icon {

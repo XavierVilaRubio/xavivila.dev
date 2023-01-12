@@ -1,6 +1,6 @@
 {
   "title": "Proyectos",
-  "description": "Consulta mis projectos comerciales y no comerciales.\nSi tienes alguna pregunta no dudes en contactar conmigo.",
+  "description": "Estos son algunos de los proyectos de los que estoy más orgulloso.\nSi tienes alguna pregunta no dudes en contactar conmigo.",
   "projects": {
     "links": "Una sencilla pagina responsive y estatica para compartir mis enlaces personales.",
     "calcapp": "Aplicación de calculadora hecha con Angular. Este proyecto ha sido generado con Angular CLI version 11.1.1.",

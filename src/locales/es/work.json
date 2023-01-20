@@ -3,7 +3,7 @@
   "description": "Estos son algunos de los proyectos de los que estoy más orgulloso.\nSi tienes alguna pregunta no dudes en contactar conmigo.",
   "projects": {
     "links": "Una sencilla pagina responsive y estatica para compartir mis enlaces personales.",
-    "calcapp": "Aplicación de calculadora hecha con Angular. Este proyecto ha sido generado con Angular CLI version 11.1.1.",
-    "calcapp2": "Aplicación de calculadora hecha con Angular. Este proyecto ha sido generado con Angular CLI version 11.1.1."
+    "gessami": "Una app con RactNative que consume una API, construida con Fasify y Prisma, para Gessamí, un centro de fisioterápia .",
+    "hackthemaze": "Un juego hecho con HTML, CSS y JS.\n3er puesto en el reto de IThinkUPC en la HackUPC 2022."
   }
 }

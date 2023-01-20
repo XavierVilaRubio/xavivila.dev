@@ -11,21 +11,21 @@
     },
     {
       "id": 1,
-      "name": "CalcApp",
-      "languages": ["Java", "Spring", "HTML&CSS", "Angular", "JavaScript"],
+      "name": "Gessamí",
+      "languages": ["ReactNative", "Expo", "Prisma", "Fastify", "TypeScript"],
       "previewLink": "",
       "githubLink": "",
-      "image": "/dashboard_sm.webp",
-      "slug": "calcapp"
+      "image": "/gessami.png",
+      "slug": "gessami"
     },
     {
       "id": 2,
-      "name": "CalcApp2",
-      "languages": ["Java", "Spring", "HTML&CSS", "Angular", "JavaScript"],
+      "name": "Hack The Maze",
+      "languages": ["HTML&CSS", "JavaScript", "Node.js", "Socket.io"],
       "previewLink": "",
       "githubLink": "",
-      "image": "/dashboard_sm.webp",
-      "slug": "calcapp2"
+      "image": "/hackthemaze.png",
+      "slug": "hackthemaze"
     }
   ]
 }

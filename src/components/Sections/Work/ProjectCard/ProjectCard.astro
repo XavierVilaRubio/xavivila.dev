@@ -79,6 +79,7 @@ const {
     column-gap: 0.5rem;
     row-gap: 0.25rem;
     overflow-x: scroll;
+    flex-wrap: wrap;
   }
 
   .languages::-webkit-scrollbar {
@@ -86,9 +87,11 @@ const {
   }
 
   .description {
-    margin-block-start: 1rem;
+    margin-top: 1rem;
+    line-height: 1.15;
     font-size: 1rem;
     color: rgba(var(--color-text-rgb), 0.8);
+    white-space: pre-wrap;
   }
 
   @media (prefers-reduced-motion: no-preference) {

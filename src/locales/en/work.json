@@ -3,7 +3,7 @@
   "description": "Here are some of the projects I'm most proud of.\nIf you have any questions feel free to ask me for more information.",
   "projects": {
     "links": "A simple responsive, static page for sharing my personal links.",
-    "calcapp": "Calculator app made with Angular. This project was generated with Angular CLI version 11.1.1.",
-    "calcapp2": "Calculator app made with Angular. This project was generated with Angular CLI version 11.1.1.asdasd"
+    "gessami": "A ReactNative app consuming an API, made with Fastify and Prisma, for Gessamí, a physiotherapy center.",
+    "hackthemaze": "A game made with HTML, CSS and JS.\n3rd place in IThinkUPC challenge at HackUPC 2022."
   }
 }

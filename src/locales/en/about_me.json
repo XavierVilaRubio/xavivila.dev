@@ -1,4 +1,20 @@
 {
   "title": "About Me",
-  "description": "I'm a Frontend Developer based in Igualada, Barcelona.\nI have been programming in a self-taught manner since I was 15 and I love web and cross-platform technologies."
+  "description": "I'm a Frontend Developer based in Igualada, Barcelona.\nI have been programming in a self-taught manner since I was 15 and I love web and cross-platform technologies.",
+  "employment": {
+    "title": "Employment History",
+    "trilogi_title": "eCommerce Developer at Trilogi - The eCommerce Agency, Igualada",
+    "trilogi_dates": "September 2021 - January 2023",
+    "trilogi_list": [
+      "Implemented tailored web designs from Figma to HTML, CSS and JS.",
+      "Worked with PHP template engines such as Twig.",
+      "Helped to achieve nice User Experiences translating the designs hand by hand with the designers."
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "degree_title": "Bachelor's degree in Digital Interaction and Computing Techniques, Universitat de Lleida",
+    "degree_dates": "September 2019 - June 2022",
+    "degree_notes": "Graduated with High Honors."
+  }
 }

@@ -16,27 +16,23 @@ import LanguageCard from './LanguageCard/LanguageCard.astro'
     <LanguageCard language="NextJS" icon="teenyicons:nextjs-solid" />
     <LanguageCard language="TailwindCSS" icon="teenyicons:tailwind-solid" />
   </div>
-  <h3>Employment History</h3>
+  <h3>{t('employment.title')}</h3>
   <div class="employment_card">
-    <h2>eCommerce Developer at Trilogi - The eCommerce Agency, Igualada</h2>
-    <p class="dates">September 2021 - Present</p>
+    <h2>{t('employment.trilogi_title')}</h2>
+    <p class="dates">{t('employment.trilogi_dates')}</p>
     <ul>
-      <li>Implemented tailored web designs from Figma to HTML, CSS and JS.</li>
-      <li>Worked with PHP template engines such as Twig.</li>
-      <li>
-        Helped to achieve nice User Experiences translating the designs hand by
-        hand with the designers.
-      </li>
+      <li>{t('employment.trilogi_list.0')}</li>
+      <li>{t('employment.trilogi_list.1')}</li>
+      <li>{t('employment.trilogi_list.2')}</li>
     </ul>
   </div>
-  <h3>Education</h3>
+  <h3>{t('education.title')}</h3>
   <div class="employment_card">
     <h2>
-      Bachelor's degree in Digital Interaction and Computing Techniques,
-      Universitat de Lleida
+      {t('education.degree_title')}
     </h2>
-    <p class="dates">September 2019 - June 2022</p>
-    <p>Graduated with High Honors.</p>
+    <p class="dates">{t('education.degree_dates')}</p>
+    <p>{t('education.degree_notes')}</p>
   </div>
 </Section>
 

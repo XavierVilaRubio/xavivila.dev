@@ -8,12 +8,11 @@ export interface ProjectProps {
   id: number
   name: string
   languages: Array<string>
-  image: string
   slug: string
 }
 
 const {
-  project: { id, name, languages, image, slug },
+  project: { id, name, languages, slug },
 } = Astro.props
 ---
 
@@ -35,7 +34,13 @@ const {
 
 <article class="card reorder" style={`--order: ${id}`}>
   <h3><a href={localizePath(`/projects/${slug}`)}>{name}</a></h3>
-  <img class="image" src={image} alt="" width="312" height="180" />
+  <img
+    class="thumbnail"
+    src={`/projects/${slug}/thumbnail.webp`}
+    alt=""
+    width="312"
+    height="180"
+  />
   <div class="languages">
     {
       languages.map((language: LanguageTagProps) => (
@@ -57,7 +62,7 @@ const {
     position: relative;
   }
 
-  .image {
+  .thumbnail {
     order: -1;
     /* aspect-ratio: 16/9; */
     max-width: 100%;

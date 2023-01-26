@@ -6,7 +6,6 @@
       "languages": ["JavaScript", "React", "NextJS", "TailwindCSS"],
       "previewLink": "https://links.xavivila.dev",
       "githubLink": "https://github.com/XavierVilaRubio/links",
-      "image": "/links_sm.webp",
       "slug": "links"
     },
     {
@@ -15,7 +14,6 @@
       "languages": ["ReactNative", "Expo", "Prisma", "Fastify", "TypeScript"],
       "previewLink": "",
       "githubLink": "",
-      "image": "/gessami.png",
       "slug": "gessami"
     },
     {
@@ -24,7 +22,6 @@
       "languages": ["HTML&CSS", "JavaScript", "Node.js", "Socket.io"],
       "previewLink": "",
       "githubLink": "",
-      "image": "/hackthemaze.png",
       "slug": "hackthemaze"
     }
   ]

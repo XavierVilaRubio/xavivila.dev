@@ -14,6 +14,11 @@
   --color-accent-rgb: 0, 124, 124;
   --color-accent: rgb(var(--color-accent-rgb));
 
+  /* GRAY */
+  --color-gray-hex: #565656;
+  --color-gray-rgb: 86, 86, 86;
+  --color-gray: rgb(--color-gray-rgb);
+
   /* SELECTION */
   --color-selection-hex: #00afaf;
   --color-selection-rgb: 0, 175, 175;
@@ -60,6 +65,11 @@
   --color-accent-hex: #00afaf;
   --color-accent-rgb: 0, 175, 175;
   --color-accent: rgb(var(--color-accent-rgb));
+
+  /* GRAY */
+  --color-gray-hex: #bababa;
+  --color-gray-rgb: 186, 186, 186;
+  --color-gray: rgb(--color-gray-rgb);
 
   /* SELECTION */
   --color-selection-hex: #007c7c;

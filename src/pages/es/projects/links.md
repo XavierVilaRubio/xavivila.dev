@@ -6,6 +6,14 @@ description: Una pagina estática y simple para compartir mis enlaces personales
 
 # Links 
 
-Links es una pagina estática
+Links es una sencilla pagina estática responsive que creé para poder compartir mis enlaces personales.
 
-![Image](/links.webp)
+## Stack
+
+Como iba a ser un proyecto bastante rápido necessitava un framework que me diese un proyecto preparado para publicar sin demasiado esfuerzo pero que a la vez me dejara integrar librerias facilmente.
+Por este motivo decidí hacerlo con [Next.js](https://nextjs.org/).
+
+En cuanto al diseño no tenía nada en mente, así que para poder agilizar el proceso opté por usar [Tailwind CSS](https://tailwindcss.com/).
+
+
+![Image](/projects/links/links.webp)

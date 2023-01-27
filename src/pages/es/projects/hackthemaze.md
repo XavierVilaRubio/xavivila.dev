@@ -5,18 +5,23 @@ description: Un sencillo juego hecho con HTML, CSS y JS. 3er puesto en el reto d
 ---
 
 # Hack The Maze
+
 Hack The Maze es el resultado de una hackathon de 36 horas, la [HackUPC 2022](https://hackupc.com/), donde conseguimos un 3r puesto.
 Participamos en el reto propuesto por [IThinkUPC](https://ithinkupc.com/), que consistía en crear un juego multijugador que fuera rápido y sirviera para desconectar durante la hackathon.
 Nosotros decidimos crear un sencillo juego de laberinto donde el jugador tiene que intentar llegar el primero a la salida.
 
 ## Stack
+
+<!-- TODO: Ficar en plan llista -->
+
 Al tener poco tiempo decidimos usar un stack básico que nos diese muchas posibilidades.
 Para el frontend usamos HTML, CSS y JS.
 Para el backend usamos NodeJS y Express.
 Para la comunicación entre el front y el back usamos Socket.io.
 
 ## Mi experiencia
-Fui el encargado de hacer el frontend, y como nunca había hecho ningún juego ni nada parecido que requiriese una parte gráfica en constante actualización, decidí usar el propio ``canvas`` de HTML.
+
+Fui el encargado de hacer el frontend, y como nunca había hecho ningún juego ni nada parecido que requiriese una parte gráfica en constante actualización, decidí usar el propio `canvas` de HTML.
 Desde JS podía pintar y actualizar el canvas en tiempo real y con muy poca carga.
 
 Al ser un juego para desconectar teníamos que prepararlo para dispositivos móviles también.
@@ -24,10 +29,10 @@ Para que fuera más cómodo de jugar, decidí no usar la típica cruceta de cont
 De esta forma era mucho más dinámico, cómodo e intuitivo para el usuario de jugar.
 
 ## Conclusión
-Esta fue mi primera hackathon y cuando empezamos no me esperaba ser capaces de crear un juego multijugador.
-Tuve que aprender, desde cero y en muy poco tiempo, como usar y exprimir al máximo tecnologías como el ``canvas`` de HTML, que pese a ser algo básico nunca lo había llegado a usar.
-Solucionar problemas de optimización como volver a pintar solo el camino recorrido en vez de todo el laberinto fueron retos con los que aprendí muchísimo.
 
+Esta fue mi primera hackathon y cuando empezamos no me esperaba ser capaces de crear un juego multijugador.
+Tuve que aprender, desde cero y en muy poco tiempo, como usar y exprimir al máximo tecnologías como el `canvas` de HTML, que pese a ser algo básico nunca lo había llegado a usar.
+Solucionar problemas de optimización como volver a pintar solo el camino recorrido en vez de todo el laberinto fueron retos con los que aprendí muchísimo.
 
 ![Image](/projects/hackthemaze/hackthemaze.webp)
 

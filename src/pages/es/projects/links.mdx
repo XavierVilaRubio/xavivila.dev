@@ -3,8 +3,11 @@ layout: ../../../layouts/ProjectLayout.astro
 title: Links
 description: Una pagina estática y simple para compartir mis enlaces personales.
 ---
+import ProjectLinks from '../../../components/Common/ProjectLinks.astro';
 
-# Links 
+# Links
+
+<ProjectLinks github_link="https://github.com/XavierVilaRubio/links" site_link="https://links.xavivila.dev" />
 
 Links es una sencilla pagina estática responsive que creé para poder compartir mis enlaces personales.
 
@@ -14,6 +17,5 @@ Como iba a ser un proyecto bastante rápido necessitava un framework que me dies
 Por este motivo decidí hacerlo con [Next.js](https://nextjs.org/).
 
 En cuanto al diseño no tenía nada en mente, así que para poder agilizar el proceso opté por usar [Tailwind CSS](https://tailwindcss.com/).
-
 
 ![Image](/projects/links/links.webp)

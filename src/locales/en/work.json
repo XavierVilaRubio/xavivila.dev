@@ -5,5 +5,7 @@
     "links": "A simple responsive, static page for sharing my personal links.",
     "gessami": "A ReactNative app consuming an API, made with Fastify and Prisma, for Gessamí, a physiotherapy center.",
     "hackthemaze": "A game made with HTML, CSS and JS.\n3rd place in IThinkUPC challenge at HackUPC 2022."
-  }
+  },
+  "source_code": "Source code",
+  "live_site": "Live site"
 }

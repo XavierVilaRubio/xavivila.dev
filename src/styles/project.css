@@ -10,6 +10,10 @@ article.content h1 {
   font-size: clamp(2rem, 1.4390243902439024rem + 2.4390243902439024vw, 3rem);
   margin-block: 2rem 1.5rem;
 }
+article.content h1 + .project-links {
+  margin-block: -1rem 1.5rem;
+}
+
 article.content h2 {
   font-weight: 800;
   font-size: 1.5rem;
@@ -42,7 +46,7 @@ article.content img {
   max-height: calc(50vh + 180px);
 }
 
-article.content a {
+article.content a:not(:has(svg)) {
   text-decoration: underline;
   text-decoration-color: var(--color-text);
 }

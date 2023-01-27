@@ -5,5 +5,7 @@
     "links": "Una sencilla pagina responsive y estatica para compartir mis enlaces personales.",
     "gessami": "Una app con RactNative que consume una API, construida con Fasify y Prisma, para Gessamí, un centro de fisioterápia .",
     "hackthemaze": "Un juego hecho con HTML, CSS y JS.\n3er puesto en el reto de IThinkUPC en la HackUPC 2022."
-  }
+  },
+  "source_code": "Codigo fuente",
+  "live_site": "Sitio publicado"
 }

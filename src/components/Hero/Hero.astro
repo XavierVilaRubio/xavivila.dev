@@ -30,7 +30,17 @@ setDefaultNamespace('hero')
       </Trans>
     </h1>
     <p class="subheadline">
-      {t('subHeadline')}
+      <Trans i18nKey="subHeadline">
+        Soy un desarrollador de aplicaciones, especializado en <span
+          >frontend</span
+        >. <br /> Aprendiendo de forma <span>autodidacta</span> desde los 15 años.<br
+        />En mi tiempo libre me gusta descubrir las nuevas <span
+          >tendencias</span
+        >
+        en el mundo de la programación, las tecnologias <span
+          >cross-platform</span
+        >, aprender sobre diseño <span>UI/UX</span>.
+      </Trans>
     </p>
   </div>
   <ScrollDownLink />
@@ -52,7 +62,7 @@ setDefaultNamespace('hero')
     text-align: center;
     max-width: 70rem;
     margin-inline: auto;
-    min-height: 95dvh;
+    min-height: 100dvh;
     padding-inline: 1rem;
 
     @media (--md-screen) {
@@ -68,7 +78,7 @@ setDefaultNamespace('hero')
 
   img {
     max-width: 18rem;
-    width: 70%;
+    width: 60%;
     height: auto;
     object-fit: contain;
 
@@ -81,18 +91,9 @@ setDefaultNamespace('hero')
   .text {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.25rem;
     max-width: 40rem;
     width: 100%;
-
-    & span {
-      font-size: 1.6rem;
-      font-size: clamp(
-        1.6rem,
-        1.4200000000000002rem + 0.8999999999999999vw,
-        2.5rem
-      );
-    }
 
     @media (--md-screen) {
       width: fit-content;
@@ -108,37 +109,29 @@ setDefaultNamespace('hero')
     font-size: clamp(2.5rem, 2.4rem + 0.5vw, 3rem);
     font-weight: 900;
 
+    & span {
+      font-size: 1.6rem;
+      font-size: clamp(
+        1.6rem,
+        1.4200000000000002rem + 0.8999999999999999vw,
+        2.5rem
+      );
+    }
+
     @media (--md-screen) {
       width: fit-content;
     }
   }
 
-  p {
-    font-size: 0.875rem;
-    font-size: clamp(
-      0.875rem,
-      0.8366013071895425rem + 0.16339869281045752vw,
-      1rem
-    );
-    font-weight: 600;
-    line-height: 1.15rem;
-    color: var(--color-accent);
+  .subheadline {
+    max-width: 80ch;
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.97rem + 0.1499999999999999vw, 1.15rem);
+    line-height: 1.15;
 
-    @media (--md-screen) {
-      max-width: 90%;
-      line-height: 1.25rem;
-    }
-  }
-
-  .links {
-    margin-block-start: 0.5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1rem;
-
-    @media (--md-screen) {
-      max-width: 350px;
+    & span {
+      color: var(--color-accent);
+      font-weight: 600;
     }
   }
 

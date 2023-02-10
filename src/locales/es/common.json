@@ -1,7 +1,7 @@
 {
   "home-description": "Hola, soy Xavi y soy Frontend Developer.",
   "navbar": {
-    "work": "Proyectos",
+    "projects": "Proyectos",
     "about_me": "Sobre mi",
     "contact": "Contacto"
   }

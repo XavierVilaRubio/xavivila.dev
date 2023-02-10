@@ -57,7 +57,7 @@ setDefaultNamespace('common')
     <nav class="nav-links" id="nav-links">
       <ul class="links-list">
         {
-          ['work', 'about_me', 'contact'].map((key) => (
+          ['projects', 'about_me', 'contact'].map((key) => (
             <li class="links-list-item">
               <a
                 href={localizePath(`/#${key}`).slice(0, -1)}
@@ -246,8 +246,9 @@ setDefaultNamespace('common')
     }
   }
   .active,
-  .links-list-item:hover > a,
-  .icon:hover {
+  .links-list > li > a:hover,
+  .language-list > li > a:hover,
+  .social-list > li > a:hover {
     color: var(--color-accent);
     transition: color 0.3s ease;
   }

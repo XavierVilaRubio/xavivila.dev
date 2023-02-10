@@ -14,19 +14,19 @@ const { github_link, site_link, target = '_blank' } = Astro.props
     href={github_link}
     class="btn"
     target={target}
-    aria-label={t('work:source_code')}
+    aria-label={t('projects:source_code')}
   >
     <Icon name="eva:github-outline" class="btn__icon" />
-    {t('work:source_code')}
+    {t('projects:source_code')}
   </a>
   <a
     href={site_link}
     class="btn"
     target={target}
-    aria-label={t('work:live_site')}
+    aria-label={t('projects:live_site')}
   >
     <Icon name="eva:globe-outline" class="btn__icon" />
-    {t('work:live_site')}
+    {t('projects:live_site')}
   </a>
 </div>
 
@@ -51,18 +51,6 @@ const { github_link, site_link, target = '_blank' } = Astro.props
 
     &:hover {
       color: var(--color-gray);
-    }
-
-    &.btn--primary {
-      color: var(--button-primary-text);
-      background-color: var(--button-primary-background);
-      border: 1px solid var(--button-primary-border);
-
-      &:hover {
-        color: var(--button-primary-hover-text);
-        background-color: var(--button-primary-hover-background);
-        border: 1px solid var(--button-primary-hover-border);
-      }
     }
   }
 

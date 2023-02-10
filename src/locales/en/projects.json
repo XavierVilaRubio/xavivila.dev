@@ -1,6 +1,5 @@
 {
-  "title": "Work",
-  "description": "Here are some of the projects I'm most proud of.\nIf you have any questions feel free to ask me for more information.",
+  "title": "Projects",
   "projects": {
     "links": "A simple responsive, static page for sharing my personal links.",
     "gessami": "A ReactNative app consuming an API, made with Fastify and Prisma, for Gessamí, a physiotherapy center.",

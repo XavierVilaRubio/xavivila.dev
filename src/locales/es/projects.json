@@ -1,6 +1,5 @@
 {
   "title": "Proyectos",
-  "description": "Estos son algunos de los proyectos de los que estoy más orgulloso.\nSi tienes alguna pregunta no dudes en contactar conmigo.",
   "projects": {
     "links": "Una sencilla pagina responsive y estatica para compartir mis enlaces personales.",
     "gessami": "Una app con RactNative que consume una API, construida con Fasify y Prisma, para Gessamí, un centro de fisioterápia .",

@@ -4,8 +4,8 @@ import { t } from 'i18next'
 import LinkButton from '../../Common/LinkButton.astro'
 ---
 
-<Section id="contact" description={false}>
-  {t('content')}
+<Section id="contact">
+  <p class="content">{t('content')}</p>
   <LinkButton
     label={t('email-button')}
     href="mailto:xavi@xavivila.dev"
@@ -16,6 +16,9 @@ import LinkButton from '../../Common/LinkButton.astro'
 </Section>
 
 <style is:global>
+  .content {
+    text-align: center;
+  }
   .email-button {
     width: fit-content;
     margin-inline: auto;

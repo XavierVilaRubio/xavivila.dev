@@ -1,25 +1,22 @@
 ---
 interface Props {
   id: string
-  description?: boolean
 }
-const { id, description = true } = Astro.props
+const { id = true } = Astro.props
 
 import { t, setDefaultNamespace } from 'i18next'
 
 setDefaultNamespace(id)
-const descriptionTextAlign = description ? 'start' : 'center'
 ---
 
 <section class="section" id={id}>
   <h2 class="section__title">{t('title')}</h2>
-  {description ? <p class="section__description">{t('description')}</p> : null}
   <div class="section__content">
     <slot />
   </div>
 </section>
 
-<style is:global define:vars={{ descriptionTextAlign }}>
+<style is:global>
   @custom-media --md-screen (min-width: 768px);
 
   .section {
@@ -51,20 +48,9 @@ const descriptionTextAlign = description ? 'start' : 'center'
     }
   }
 
-  .section__description {
-    margin-block-start: 1.5rem;
-    text-align: center;
-
-    @media (--md-screen) {
-      margin-block-start: 1.5rem;
-      white-space: pre-wrap;
-    }
-  }
-
   .section__content {
     margin-block-start: 3rem;
     width: 100%;
-    text-align: var(--descriptionTextAlign);
   }
 
   .section__content > a:not(.btn) {

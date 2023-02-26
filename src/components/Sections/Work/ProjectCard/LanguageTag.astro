@@ -9,10 +9,16 @@ const { language } = Astro.props
 <div><p>{language}</p></div>
 
 <style>
+  @custom-media --md-screen (min-width: 768px);
+
   p {
     display: flex;
     font-size: 0.875rem;
     color: var(--color-text);
+
+    @media (--md-screen) {
+      font-size: 1rem;
+    }
   }
   div {
     display: flex;

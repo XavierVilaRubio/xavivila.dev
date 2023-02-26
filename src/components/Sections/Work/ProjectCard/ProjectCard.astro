@@ -9,10 +9,11 @@ export interface ProjectProps {
   name: string
   languages: Array<string>
   slug: string
+  previewLink?: string
 }
 
 const {
-  project: { id, name, languages, slug },
+  project: { id, name, languages, slug, previewLink },
 } = Astro.props
 ---
 
@@ -32,33 +33,55 @@ const {
   })
 </script>
 
-<article class="card reorder" style={`--order: ${id}`}>
-  <h3><a href={localizePath(`/projects/${slug}`)}>{name}</a></h3>
-  <img
-    class="thumbnail"
-    src={`/projects/${slug}/thumbnail.webp`}
-    alt=""
-    width="312"
-    height="180"
-  />
-  <div class="languages">
-    {
-      languages.map((language: LanguageTagProps) => (
-        <LanguageTag language={language} />
-      ))
-    }
-  </div>
-  <p class="description">{t(`projects.${slug}`)}</p>
-</article>
+{
+  id != 1 ? (
+    <a href={localizePath(`/projects/${slug}`)}>
+      <article class="card reorder" style={`--order: ${id}`}>
+        <h3>{name}</h3>
+        <img
+          class="thumbnail"
+          src={`/projects/${slug}/thumbnail.webp`}
+          alt=""
+          width="312"
+          height="180"
+        />
+        <div class="languages">
+          {languages.map((language: LanguageTagProps) => (
+            <LanguageTag language={language} />
+          ))}
+        </div>
+        <p class="description">{t(`projects.${slug}`)}</p>
+      </article>
+    </a>
+  ) : (
+    <article class="card reorder" style={`--order: ${id}`}>
+      <h3>{name}</h3>
+      <img
+        class="thumbnail"
+        src={`/projects/${slug}/thumbnail.webp`}
+        alt=""
+        width="312"
+        height="180"
+      />
+      <div class="languages">
+        {languages.map((language: LanguageTagProps) => (
+          <LanguageTag language={language} />
+        ))}
+      </div>
+      <p class="description">{t(`projects.${slug}`)}</p>
+    </article>
+  )
+}
 
 <style>
+  @custom-media --md-screen (min-width: 768px);
+
   .card {
     display: flex;
     flex-direction: column;
     margin-inline: auto;
     text-align: start;
     max-width: 100%;
-    cursor: pointer;
     position: relative;
   }
 
@@ -97,6 +120,10 @@ const {
     font-size: 1rem;
     color: rgba(var(--color-text-rgb), 0.8);
     white-space: pre-wrap;
+
+    @media (--md-screen) {
+      font-size: 1.1rem;
+    }
   }
 
   @media (prefers-reduced-motion: no-preference) {

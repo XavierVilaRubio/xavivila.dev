@@ -29,19 +29,25 @@ setDefaultNamespace('hero')
         Hi, I'm Xavi and I'm <br /> a <span>Junior Frontend Developer</span>.
       </Trans>
     </h1>
-    <p class="subheadline">
-      <Trans i18nKey="subHeadline">
-        Soy un desarrollador de aplicaciones, especializado en <span
-          >frontend</span
-        >. <br /> Aprendiendo de forma <span>autodidacta</span> desde los 15 años.<br
-        />En mi tiempo libre me gusta descubrir las nuevas <span
-          >tendencias</span
-        >
-        en el mundo de la programación, las tecnologias <span
-          >cross-platform</span
-        >, aprender sobre diseño <span>UI/UX</span>.
-      </Trans>
-    </p>
+    <div class="subheadline">
+      <p class="subheadline1">
+        <Trans i18nKey="subHeadline1">
+          Soy un desarrollador de aplicaciones, especializado en <span
+            >frontend</span
+          >. <br /> Aprendiendo de forma <span>autodidacta</span> desde los 15 años.
+        </Trans>
+      </p>
+      <p class="subheadline2">
+        <Trans i18nKey="subHeadline2">
+          En mi tiempo libre me gusta descubrir las nuevas <span
+            >tendencias</span
+          >
+          en el mundo de la programación, las tecnologias <span
+            >cross-platform</span
+          >, aprender sobre diseño <span>UI/UX</span>.
+        </Trans>
+      </p>
+    </div>
   </div>
   <ScrollDownLink />
   <div id="dot" class="dot" style="top: 15%; left: 15%"></div>
@@ -91,12 +97,11 @@ setDefaultNamespace('hero')
   .text {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-    max-width: 40rem;
-    width: 100%;
+    gap: 0.75rem;
+    max-width: 45ch;
 
     @media (--md-screen) {
-      width: fit-content;
+      gap: 1.25rem;
     }
   }
 
@@ -105,16 +110,17 @@ setDefaultNamespace('hero')
     flex-direction: column;
     gap: 0.25rem;
 
-    font-size: 2.5rem;
-    font-size: clamp(2.5rem, 2.4rem + 0.5vw, 3rem);
+    font-size: 2.25rem;
+    font-size: clamp(2.25rem, 2.4rem + 0.5vw, 3rem);
     font-weight: 900;
 
     & span {
-      font-size: 1.6rem;
+      font-weight: 800;
+      font-size: 1.5rem;
       font-size: clamp(
-        1.6rem,
+        1.5rem,
         1.4200000000000002rem + 0.8999999999999999vw,
-        2.5rem
+        2.25rem
       );
     }
 
@@ -124,7 +130,6 @@ setDefaultNamespace('hero')
   }
 
   .subheadline {
-    max-width: 80ch;
     font-size: 1rem;
     font-size: clamp(1rem, 0.97rem + 0.1499999999999999vw, 1.15rem);
     line-height: 1.15;
@@ -132,6 +137,10 @@ setDefaultNamespace('hero')
     & span {
       color: var(--color-accent);
       font-weight: 600;
+    }
+
+    & .subheadline2 {
+      margin-block-start: 0.5rem;
     }
   }
 

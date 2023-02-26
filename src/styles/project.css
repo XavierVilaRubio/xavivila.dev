@@ -22,7 +22,8 @@ article.content h2 {
   margin-block: 1.5rem 1rem;
 }
 
-article.content p {
+article.content p,
+article.content ul {
   font-size: 1.125rem;
   font-size: clamp(
     1.125rem,
@@ -46,4 +47,10 @@ article.content img {
 article.content a:not(:has(svg)) {
   text-decoration: underline;
   text-decoration-color: var(--color-text);
+}
+
+article.content ul {
+  list-style: disc;
+  padding-left: 2.5rem;
+  margin-block-end: 1rem;
 }

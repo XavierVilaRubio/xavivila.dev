@@ -3,31 +3,62 @@ import Icon from 'astro-icon'
 import { t } from 'i18next'
 
 interface Props {
-  github_link: string
-  site_link: string
+  github_link?: string
+  site_link?: string
+  title?: string
+  icon?: string
+  link?: string
 }
-const { github_link, site_link, target = '_blank' } = Astro.props
+const {
+  github_link,
+  site_link,
+  target = '_blank',
+  title,
+  icon,
+  link,
+} = Astro.props
 ---
 
 <div class="project-links">
-  <a
-    href={github_link}
-    class="btn"
-    target={target}
-    aria-label={t('projects:source_code')}
-  >
-    <Icon name="eva:github-outline" class="btn__icon" />
-    {t('projects:source_code')}
-  </a>
-  <a
-    href={site_link}
-    class="btn"
-    target={target}
-    aria-label={t('projects:live_site')}
-  >
-    <Icon name="eva:globe-outline" class="btn__icon" />
-    {t('projects:live_site')}
-  </a>
+  {
+    github_link ? (
+      <a
+        href={github_link}
+        class="btn"
+        target={target}
+        aria-label={t('projects:source_code')}
+      >
+        <Icon name="eva:github-outline" class="btn__icon" />
+        {t('projects:source_code')}
+      </a>
+    ) : null
+  }
+  {
+    site_link ? (
+      <a
+        href={site_link}
+        class="btn"
+        target={target}
+        aria-label={t('projects:live_site')}
+      >
+        <Icon name="eva:globe-outline" class="btn__icon" />
+        {t('projects:live_site')}
+      </a>
+    ) : null
+  }
+  {
+    title && icon && link ? (
+      <a
+        href={link}
+        class="btn"
+        target={target}
+        aria-label={t('projects:live_site')}
+      >
+        <Icon name={icon} class="btn__icon" />
+        {title}
+      </a>
+    ) : null
+  }
 </div>
 
 <style>

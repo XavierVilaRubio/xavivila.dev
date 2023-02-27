@@ -3,9 +3,45 @@ layout: ../../layouts/ProjectLayout.astro
 title: Hack The Maze
 description: A simple game made with HTML, CSS and JS. 3rd place in IThinkUPC challenge at HackUPC 2022.
 ---
+import ProjectLinks from '../../components/Common/ProjectLinks.astro';
 
 # Hack The Maze
 
-This project was the result of a 36 hours hackathon at [HackUPC 2022](https://hackupc.com/). The goal was to create a game using HTML, CSS and JS. We decided to create a simple maze game where the player has to find the exit.
+<ProjectLinks title="Devpost" link="https://devpost.com/software/hack-the-maze" icon="eva:globe-outline" />
+
+Hack The Maze is the result of a 36-hour hackathon, the [HackUPC 2022](https://hackupc.com/), where we got a 3rd place.
+We participated in the challenge proposed by [IThinkUPC](https://ithinkupc.com/), which was to create a multiplayer game that was fast and useful to disconnect during the hackathon.
+We decided to create a simple maze game where the players have to try to reach the exit first.
+
+## Stack
+
+Having little time we decided to use a basic stack that would give us a lot of possibilities.
+
+Frontend:
+- HTML
+- CSS
+- JS
+
+Backend:
+- NodeJS
+- Express
+
+Communication:
+- Socket.io
+
+## My experience
+
+I was in charge of making the frontend, and as I had never made any game or anything that required a constantly updating graphical part, I decided to use the HTML `canvas` itself.
+From JS I could paint and update the canvas in real time and with very little load.
+
+As it was a game to disconnect we had to prepare it for mobile devices as well.
+In order to make it more comfortable to play, I decided not to use the typical cross controls, and I chose to implement swipe controls.
+This way it was much more dynamic, comfortable and intuitive for the user to play.
+
+## Conclusion
+
+This was my first hackathon and when we started I did not expect to be able to create a multiplayer game.
+I had to learn, from scratch and in a very short time, how to use and get the most out of technologies such as HTML canvas, which despite being something basic I had never used before.
+Solving optimization problems such as repainting only the path instead of the whole maze were challenges that I learned a lot.
 
 ![Image](/projects/hackthemaze/hackthemaze.webp)
